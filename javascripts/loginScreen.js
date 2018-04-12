@@ -1,9 +1,13 @@
 "use strict";
 let surveyScreen = require("./surveyScreen");
 let $ = require('jquery');
-let accessCode = 12345;
+let dummyCode = 12345;
+let allAges = require('./ages');
+let answers = require('./answerObj');
+let db = require('./databaseCalls');
 
 function show(){
+    $('.container').html("");
     $('.container').append(`
     <form>
       <div class="form-group">
@@ -16,9 +20,18 @@ function show(){
 
     $("#submit-btn").on('click', (e)=>{
         e.preventDefault();
-        if(accessCode === parseInt($('#access-code').val())){
-           //ADD NEXT SCREEN HERE
 
+        db.getAccessCodeData().then((data)=>{
+            console.log(data);
+        });
+
+        if(dummyCode === (parseInt($('#access-code').val()))){
+            answers.accessCode = dummyCode;
+            console.log(answers);
+            allAges.makeAgeButtons(answers);          
+        }else{
+            show();
+            $(".form-group").append(`<div class="error-message">Please Try Again</div>`);
         }
     });
     
