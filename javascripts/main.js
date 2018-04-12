@@ -1,5 +1,7 @@
 "use strict";
-console.log("Main Connected");
 
-require("./loginScreen");
-require("./surveyScreen");
+let loginScreen = require("./loginScreen");
+let surveyScreen = require("./surveyScreen");
+
+loginScreen.show();
+
