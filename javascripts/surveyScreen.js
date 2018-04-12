@@ -5,9 +5,6 @@ fakeData = require('./fakeData'),
     yesNo = require('./answerTypeYesNo');
     
 function show(answerObj){
-    //get call from DB
-    // returns question = "string"
-    // returns answer type = int
     db.getData();
 
     console.log(fakeData.fakeData);

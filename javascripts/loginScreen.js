@@ -4,6 +4,7 @@ let $ = require('jquery');
 let dummyCode = 12345;
 let allAges = require('./ages');
 let answers = require('./answerObj');
+let db = require('./databaseCalls');
 
 function show(){
     $('.container').html("");
@@ -19,6 +20,11 @@ function show(){
 
     $("#submit-btn").on('click', (e)=>{
         e.preventDefault();
+
+        db.getAccessCodeData().then((data)=>{
+            console.log(data);
+        });
+
         if(dummyCode === (parseInt($('#access-code').val()))){
             answers.accessCode = dummyCode;
             console.log(answers);
