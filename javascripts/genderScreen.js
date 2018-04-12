@@ -1,11 +1,11 @@
 "use strict";
 let $ = require('jquery'),
-    answers = require('./answerObj');
+    survey = require('./surveyScreen');
 
 let gender = ["Male", "Female", "No Answer"],
     pageTitle = "Gender";
 
-function show(){
+function show(answers){
     $(".container").html("");
     $(".container").append(`<div class="title">${pageTitle}</div>`);
     $(".container").append(`<div id="button-set"></div>`);
@@ -19,9 +19,8 @@ function show(){
     $("#button-set").append(`<button type="button" id=${last} value="${last}" class="last-btn-item">${last}</button>`);
 
     $("#button-set button").on('click', (e)=>{
-        console.log(e.currentTarget.value);
         answers.gender = e.currentTarget.value;
-        console.log(answers);
+        survey.show(answers);
     });
 
 }
