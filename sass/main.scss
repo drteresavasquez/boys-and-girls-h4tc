@@ -17,9 +17,10 @@
     margin-bottom: 10px;
 }
 
-.container {
+body {
     background-image: url("/images/background-01.png");
     min-height: 100vh;
     min-width: 100vh;
     background-repeat: no-repeat;
+    background-color: rgba(0, 131, 211, 0.5);
 }
