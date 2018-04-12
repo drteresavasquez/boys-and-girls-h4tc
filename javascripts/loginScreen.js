@@ -2,8 +2,10 @@
 let surveyScreen = require("./surveyScreen");
 let $ = require('jquery');
 let accessCode = 12345;
+let allAges = require('./ages');
 
 function show(){
+    $('.container').html("");
     $('.container').append(`
     <form>
       <div class="form-group">
@@ -17,8 +19,12 @@ function show(){
     $("#submit-btn").on('click', (e)=>{
         e.preventDefault();
         if(accessCode === parseInt($('#access-code').val())){
-           //ADD NEXT SCREEN HERE
-
+            allAges.makeAgeButtons();
+           console.log("YOU GOT IT!");
+            
+        }else{
+            show();
+            $(".form-group").append(`<div class="error-message">Please Try Again</div>`);
         }
     });
     

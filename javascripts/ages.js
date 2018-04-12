@@ -1,18 +1,28 @@
 "use strict";
+let answers = require('./answerObj');
+let genderScreen = require("./genderScreen");
+
 
 let $ = require('jquery'),
-    pageTitle = "Select Your Age Group";
+    pageTitle = "Select Your Age Group",
+    allAges = require("./allAges");
 
 console.log("ages.js here");
 
-function makeAgeButtons(allAges) {
+function makeAgeButtons() {
+    $(".container").html("");
+    $(".container").append(`<div class="title">${pageTitle}</div>`);
+    $(".container").append(`<div id="button-set"></div>`);
     let agesDiv;
-    for (let ages in allAges) {
-        let currentItem = allAges[ages];
-        agesDiv = `<button id=${ages} class="btn btn-lg">${ages.name}</button>
-                    <p>${ages.range}<p>`;
-    }
-    $("#container").append(agesDiv);
+    allAges.forEach((item)=>{
+        $("#button-set").append(`<button id=${item.btnText} value="${item.btnText}" class="btn btn-lg">${item.btnText}</button>
+        <p>${item.subHeading}<p>`);
+    });
+
+    $("#button-set button").on('click', (e)=>{
+        answers.ageGroup = e.currentTarget.value;
+        genderScreen.show(answers);
+    });
 }
 
 module.exports = { makeAgeButtons };
