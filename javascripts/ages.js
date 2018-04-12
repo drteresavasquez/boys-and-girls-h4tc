@@ -1,5 +1,4 @@
 "use strict";
-let answers = require('./answerObj');
 let genderScreen = require("./genderScreen");
 
 
@@ -9,7 +8,7 @@ let $ = require('jquery'),
 
 console.log("ages.js here");
 
-function makeAgeButtons() {
+function makeAgeButtons(answers) {
     $(".container").html("");
     $(".container").append(`<div class="title">${pageTitle}</div>`);
     $(".container").append(`<div id="button-set"></div>`);

@@ -1,8 +1,9 @@
 "use strict";
 let surveyScreen = require("./surveyScreen");
 let $ = require('jquery');
-let accessCode = 12345;
+let dummyCode = 12345;
 let allAges = require('./ages');
+let answers = require('./answerObj');
 
 function show(){
     $('.container').html("");
@@ -18,10 +19,10 @@ function show(){
 
     $("#submit-btn").on('click', (e)=>{
         e.preventDefault();
-        if(accessCode === parseInt($('#access-code').val())){
-            allAges.makeAgeButtons();
-           console.log("YOU GOT IT!");
-            
+        if(dummyCode === (parseInt($('#access-code').val()))){
+            answers.accessCode = dummyCode;
+            console.log(answers);
+            allAges.makeAgeButtons(answers);          
         }else{
             show();
             $(".form-group").append(`<div class="error-message">Please Try Again</div>`);

@@ -1,5 +1,6 @@
 "use strict";
-let $ = require('jquery');
+let $ = require('jquery'),
+    survey = require('./surveyScreen');
 
 let gender = ["Male", "Female", "No Answer"],
     pageTitle = "Gender";
@@ -19,6 +20,7 @@ function show(answers){
 
     $("#button-set button").on('click', (e)=>{
         answers.gender = e.currentTarget.value;
+        survey.show(answers);
     });
 
 }
