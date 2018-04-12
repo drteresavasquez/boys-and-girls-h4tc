@@ -1,13 +1,31 @@
 (function(){function r(e,n,t){function o(i,f){if(!n[i]){if(!e[i]){var c="function"==typeof require&&require;if(!f&&c)return c(i,!0);if(u)return u(i,!0);var a=new Error("Cannot find module '"+i+"'");throw a.code="MODULE_NOT_FOUND",a}var p=n[i]={exports:{}};e[i][0].call(p.exports,function(r){var n=e[i][1][r];return o(n||r)},p,p.exports,r,e,n,t)}return n[i].exports}for(var u="function"==typeof require&&require,i=0;i<t.length;i++)o(t[i]);return o}return r})()({1:[function(require,module,exports){
 "use strict";
+let $ = require('jquery');
+
+let gender = ["Male", "Female", "No Answer"],
+    pageTitle = "Gender";
+
+function show(){
+    $(".container").html("");
+    $(".container").append(`<div class="title">${pageTitle}</div>`);
+    let last = gender.pop();
+    gender.forEach((item)=>{
+        $(".container").append(`
+            <button type="button" id=${item} class="btn btn-lg">${item}</button><br>
+        `);
+    });
+    $(".container").append(`<div class="sub-item">${last}</div>`);
+}
+
+module.exports = { show };
+},{"jquery":5}],2:[function(require,module,exports){
+"use strict";
 let surveyScreen = require("./surveyScreen");
 let $ = require('jquery');
 let accessCode = 12345;
 
 function show(){
-    // PLACE FORM HERE
     $('.container').append(`
-    Copy
     <form>
       <div class="form-group">
         <input id="access-code" type="number" min="0" inputmode="numeric" pattern="[0-9]*" title="Non-negative integral number" placeholder="ACCESS CODE">
@@ -20,7 +38,8 @@ function show(){
     $("#submit-btn").on('click', (e)=>{
         e.preventDefault();
         if(accessCode === parseInt($('#access-code').val())){
-           $(".container").append("You can enter");
+           //ADD NEXT SCREEN HERE
+
         }
     });
     
@@ -29,23 +48,26 @@ function show(){
 
 
 module.exports = { show };
-},{"./surveyScreen":3,"jquery":4}],2:[function(require,module,exports){
+},{"./surveyScreen":4,"jquery":5}],3:[function(require,module,exports){
 "use strict";
 
 let loginScreen = require("./loginScreen");
 let surveyScreen = require("./surveyScreen");
+let genderScreen = require("./genderScreen");
 
 loginScreen.show();
+genderScreen.show();
 
 
-},{"./loginScreen":1,"./surveyScreen":3}],3:[function(require,module,exports){
+
+},{"./genderScreen":1,"./loginScreen":2,"./surveyScreen":4}],4:[function(require,module,exports){
 "use strict";
 let $ = require('jquery');
     
 
 
 // module.exports = {  };
-},{"jquery":4}],4:[function(require,module,exports){
+},{"jquery":5}],5:[function(require,module,exports){
 /*!
  * jQuery JavaScript Library v3.3.1
  * https://jquery.com/
@@ -10411,4 +10433,4 @@ if ( !noGlobal ) {
 return jQuery;
 } );
 
-},{}]},{},[2]);
+},{}]},{},[3]);
