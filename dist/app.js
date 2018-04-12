@@ -18,16 +18,34 @@ function makeAgeButtons(allAges) {
 
 module.exports = { makeAgeButtons };
 
-},{"jquery":5}],2:[function(require,module,exports){
+},{"jquery":6}],2:[function(require,module,exports){
+"use strict";
+let $ = require('jquery');
+
+let gender = ["Male", "Female", "No Answer"],
+    pageTitle = "Gender";
+
+function show(){
+    $(".container").html("");
+    $(".container").append(`<div class="title">${pageTitle}</div>`);
+    let last = gender.pop();
+    gender.forEach((item)=>{
+        $(".container").append(`
+            <button type="button" id=${item} class="btn btn-lg">${item}</button><br>
+        `);
+    });
+    $(".container").append(`<div class="sub-item">${last}</div>`);
+}
+
+module.exports = { show };
+},{"jquery":6}],3:[function(require,module,exports){
 "use strict";
 let surveyScreen = require("./surveyScreen");
 let $ = require('jquery');
 let accessCode = 12345;
 
 function show(){
-    // PLACE FORM HERE
     $('.container').append(`
-    Copy
     <form>
       <div class="form-group">
         <input id="access-code" type="number" min="0" inputmode="numeric" pattern="[0-9]*" title="Non-negative integral number" placeholder="ACCESS CODE">
@@ -40,7 +58,8 @@ function show(){
     $("#submit-btn").on('click', (e)=>{
         e.preventDefault();
         if(accessCode === parseInt($('#access-code').val())){
-           $(".container").append("You can enter");
+           //ADD NEXT SCREEN HERE
+
         }
     });
     
@@ -49,24 +68,27 @@ function show(){
 
 
 module.exports = { show };
-},{"./surveyScreen":4,"jquery":5}],3:[function(require,module,exports){
+},{"./surveyScreen":5,"jquery":6}],4:[function(require,module,exports){
 "use strict";
 
 let loginScreen = require("./loginScreen");
 let surveyScreen = require("./surveyScreen");
 let ages = require("./ages");
+let genderScreen = require("./genderScreen");
 
 loginScreen.show();
+genderScreen.show();
 
 
-},{"./ages":1,"./loginScreen":2,"./surveyScreen":4}],4:[function(require,module,exports){
+
+},{"./ages":1,"./genderScreen":2,"./loginScreen":3,"./surveyScreen":5}],5:[function(require,module,exports){
 "use strict";
 let $ = require('jquery');
     
 
 
 // module.exports = {  };
-},{"jquery":5}],5:[function(require,module,exports){
+},{"jquery":6}],6:[function(require,module,exports){
 /*!
  * jQuery JavaScript Library v3.3.1
  * https://jquery.com/
@@ -10432,4 +10454,4 @@ if ( !noGlobal ) {
 return jQuery;
 } );
 
-},{}]},{},[3]);
+},{}]},{},[4]);
