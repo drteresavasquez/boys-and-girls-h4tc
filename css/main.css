@@ -6,4 +6,11 @@
 .sub-item {
   color: black; }
 
+.last-btn-item {
+  background: black;
+  color: white;
+  border: none;
+  width: 40%;
+  margin-bottom: 10px; }
+
 /*# sourceMappingURL=main.css.map */

@@ -1,6 +1,17 @@
 (function(){function r(e,n,t){function o(i,f){if(!n[i]){if(!e[i]){var c="function"==typeof require&&require;if(!f&&c)return c(i,!0);if(u)return u(i,!0);var a=new Error("Cannot find module '"+i+"'");throw a.code="MODULE_NOT_FOUND",a}var p=n[i]={exports:{}};e[i][0].call(p.exports,function(r){var n=e[i][1][r];return o(n||r)},p,p.exports,r,e,n,t)}return n[i].exports}for(var u="function"==typeof require&&require,i=0;i<t.length;i++)o(t[i]);return o}return r})()({1:[function(require,module,exports){
 "use strict";
-let $ = require('jquery');
+
+let answerObj = {
+    ageGroup: '',
+    gender: '',
+    answer: ''
+};
+
+module.exports = answerObj;
+},{}],2:[function(require,module,exports){
+"use strict";
+let $ = require('jquery'),
+    answers = require('./answerObj');
 
 let gender = ["Male", "Female", "No Answer"],
     pageTitle = "Gender";
@@ -8,17 +19,26 @@ let gender = ["Male", "Female", "No Answer"],
 function show(){
     $(".container").html("");
     $(".container").append(`<div class="title">${pageTitle}</div>`);
+    $(".container").append(`<div id="button-set"></div>`);
     let last = gender.pop();
     gender.forEach((item)=>{
-        $(".container").append(`
-            <button type="button" id=${item} class="btn btn-lg">${item}</button><br>
+        $("#button-set").append(`
+            <button type="button" value="${item}" id=${item} class="btn btn-lg">${item}</button><br>
         `);
     });
-    $(".container").append(`<div class="sub-item">${last}</div>`);
+
+    $("#button-set").append(`<button type="button" id=${last} value="${last}" class="last-btn-item">${last}</button>`);
+
+    $("#button-set button").on('click', (e)=>{
+        console.log(e.currentTarget.value);
+        answers.gender = e.currentTarget.value;
+        console.log(answers);
+    });
+
 }
 
 module.exports = { show };
-},{"jquery":5}],2:[function(require,module,exports){
+},{"./answerObj":1,"jquery":6}],3:[function(require,module,exports){
 "use strict";
 let surveyScreen = require("./surveyScreen");
 let $ = require('jquery');
@@ -48,7 +68,7 @@ function show(){
 
 
 module.exports = { show };
-},{"./surveyScreen":4,"jquery":5}],3:[function(require,module,exports){
+},{"./surveyScreen":5,"jquery":6}],4:[function(require,module,exports){
 "use strict";
 
 let loginScreen = require("./loginScreen");
@@ -60,14 +80,14 @@ genderScreen.show();
 
 
 
-},{"./genderScreen":1,"./loginScreen":2,"./surveyScreen":4}],4:[function(require,module,exports){
+},{"./genderScreen":2,"./loginScreen":3,"./surveyScreen":5}],5:[function(require,module,exports){
 "use strict";
 let $ = require('jquery');
     
 
 
 // module.exports = {  };
-},{"jquery":5}],5:[function(require,module,exports){
+},{"jquery":6}],6:[function(require,module,exports){
 /*!
  * jQuery JavaScript Library v3.3.1
  * https://jquery.com/
@@ -10433,4 +10453,4 @@ if ( !noGlobal ) {
 return jQuery;
 } );
 
-},{}]},{},[3]);
+},{}]},{},[4]);
