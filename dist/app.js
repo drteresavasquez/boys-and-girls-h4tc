@@ -21,7 +21,7 @@ function show(){
     $("#submit-btn").on('click', (e)=>{
         e.preventDefault();
         if(accessCode === parseInt($('#access-code').val())){
-            console.log("You can enter");
+           $(".container").append("You can enter");
         }
     });
     
