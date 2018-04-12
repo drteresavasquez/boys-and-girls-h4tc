@@ -4,7 +4,6 @@ let $ = require('jquery');
 let accessCode = 12345;
 
 function show(){
-    console.log("show");
     // PLACE FORM HERE
     $('.container').append(`
     Copy

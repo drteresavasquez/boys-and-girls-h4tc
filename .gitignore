@@ -1,4 +1,9 @@
 resources/*
 lib/.sass-cache
 .DS_Store
+lib/node_modulesresources/*
+lib/.sass-cache
+.DS_Store
 lib/node_modules
+css/*
+dist/*
