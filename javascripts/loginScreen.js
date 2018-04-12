@@ -5,8 +5,9 @@ let dummyCode = 12345;
 let allAges = require('./ages');
 let answers = require('./answerObj');
 let db = require('./databaseCalls');
+var regex = /^([+-]?[1-9]\d*|0)$/;
 
-function show(){
+function show() {
     $('.container').html("");
     $('.container').append(`
     <form>
@@ -18,25 +19,30 @@ function show(){
     </form>
     `);
 
-    $("#submit-btn").on('click', (e)=>{
-        e.preventDefault();
+    let dataArray = db
+        .getAccessCodeData()
+        .then((data) => {
+            $("#submit-btn").on('click', (e) => {
+                e.preventDefault();
+                let inputVal = $('#access-code').val();
+                let yesVal = [];
+                data.forEach((item) => {
+                    if (item == parseInt(inputVal)) {
+                        answers.accessCode = item;
+                        yesVal.push(item);
+                    }
+                });
 
-        db.getAccessCodeData().then((data)=>{
-            console.log(data);
+                if (yesVal.length != 0) {
+                    allAges.makeAgeButtons(answers);
+                    return;
+                } else {
+                    show();
+                    $(".form-group").append(`<div class="error-message">Please Try Again</div>`);
+                }
+            });
         });
-
-        if(dummyCode === (parseInt($('#access-code').val()))){
-            answers.accessCode = dummyCode;
-            console.log(answers);
-            allAges.makeAgeButtons(answers);          
-        }else{
-            show();
-            $(".form-group").append(`<div class="error-message">Please Try Again</div>`);
-        }
-    });
-    
 }
-
-
-
-module.exports = { show };
+module.exports = {
+    show
+};
