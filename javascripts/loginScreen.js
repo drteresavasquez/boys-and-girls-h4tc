@@ -19,8 +19,7 @@ function show() {
     </form>
     `);
 
-    let dataArray = db
-        .getAccessCodeData()
+    db.getAccessCodeData()
         .then((data) => {
             $("#submit-btn").on('click', (e) => {
                 e.preventDefault();
