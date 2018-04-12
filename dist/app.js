@@ -1,5 +1,25 @@
 (function(){function r(e,n,t){function o(i,f){if(!n[i]){if(!e[i]){var c="function"==typeof require&&require;if(!f&&c)return c(i,!0);if(u)return u(i,!0);var a=new Error("Cannot find module '"+i+"'");throw a.code="MODULE_NOT_FOUND",a}var p=n[i]={exports:{}};e[i][0].call(p.exports,function(r){var n=e[i][1][r];return o(n||r)},p,p.exports,r,e,n,t)}return n[i].exports}for(var u="function"==typeof require&&require,i=0;i<t.length;i++)o(t[i]);return o}return r})()({1:[function(require,module,exports){
 "use strict";
+
+let $ = require('jquery'),
+    pageTitle = "Select Your Age Group";
+
+console.log("ages.js here");
+
+function makeAgeButtons(allAges) {
+    let agesDiv;
+    for (let ages in allAges) {
+        let currentItem = allAges[ages];
+        agesDiv = `<button id=${ages} class="btn btn-lg">${ages.name}</button>
+                    <p>${ages.range}<p>`;
+    }
+    $("#container").append(agesDiv);
+}
+
+module.exports = { makeAgeButtons };
+
+},{"jquery":5}],2:[function(require,module,exports){
+"use strict";
 let surveyScreen = require("./surveyScreen");
 let $ = require('jquery');
 let accessCode = 12345;
@@ -29,23 +49,24 @@ function show(){
 
 
 module.exports = { show };
-},{"./surveyScreen":3,"jquery":4}],2:[function(require,module,exports){
+},{"./surveyScreen":4,"jquery":5}],3:[function(require,module,exports){
 "use strict";
 
 let loginScreen = require("./loginScreen");
 let surveyScreen = require("./surveyScreen");
+let ages = require("./ages");
 
 loginScreen.show();
 
 
-},{"./loginScreen":1,"./surveyScreen":3}],3:[function(require,module,exports){
+},{"./ages":1,"./loginScreen":2,"./surveyScreen":4}],4:[function(require,module,exports){
 "use strict";
 let $ = require('jquery');
     
 
 
 // module.exports = {  };
-},{"jquery":4}],4:[function(require,module,exports){
+},{"jquery":5}],5:[function(require,module,exports){
 /*!
  * jQuery JavaScript Library v3.3.1
  * https://jquery.com/
@@ -10411,4 +10432,4 @@ if ( !noGlobal ) {
 return jQuery;
 } );
 
-},{}]},{},[2]);
+},{}]},{},[3]);
