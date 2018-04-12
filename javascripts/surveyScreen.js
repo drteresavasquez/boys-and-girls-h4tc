@@ -8,7 +8,7 @@ function show(answerObj){
     db.getData();
 
     console.log(fakeData.fakeData);
-    switch (fakeData.fakeData.answerType) {
+    switch (fakeData.fakeData.AnswerType) {
         case 1:
             //DO SOMETHING
             console.log("1");
