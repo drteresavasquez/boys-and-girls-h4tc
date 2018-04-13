@@ -3,20 +3,21 @@ let $ = require('jquery');
 let db = require('./databaseCalls');
 let screens = require('./finalScreens');
 
-let text = [1, 2, 3, 4, 5];
+let text = ["Not At All", "", "Kind Of", "", "Very Much"];
 let images = ["./images/star.png"];
 
 function show(answers, question){
     $('.container').html("");
-    $(".container").append(`<div class="title">${question}</div>`);
+    // $(".container").append(`<div class="title">${question}</div>`);
     $(".container").append(`<div id="button-set">
+    <div class="title answers">${question}</div>
         <div class="row">
         </div>
     </div>`);
 
     text.forEach((item, index)=>{
         $(".row").append(`
-        <div class="card col-sm-3" id="${item}">
+        <div class="card col-sm-2" id="${item}">
             <img class="card-img-top" src="${images[0]}" alt="Card image cap">
             <div class="card-body">
             <p class="card-text">${item}</p>

@@ -3,6 +3,7 @@
 @import 'scriptFont';
 @import 'card';
 @import 'genderPage';
+@import 'answers';
 
 @import "backgroundSwap";
 
@@ -103,8 +104,13 @@ input {
     text-align: center;
     font-size: 3em;
     padding: 10px;
+    width: 100%;
 }
 
+.row{
+    width: 100%;
+    justify-content: center;
+}
 
 .age-btn {
     width: 350px;
