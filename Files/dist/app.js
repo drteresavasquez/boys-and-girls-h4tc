@@ -123,6 +123,7 @@ let db = require('./databaseCalls');
 let screens = require('./finalScreens');
 
 let text = ["Not At All", "", "Kind Of", "", "Very Much"];
+let rating = [1,2,3,4,5];
 let images = ["./images/star.png"];
 
 function show(answers, question){
@@ -136,7 +137,7 @@ function show(answers, question){
 
     text.forEach((item, index)=>{
         $(".row").append(`
-        <div class="card col-sm-2" id="${item}">
+        <div class="card col-sm-2" id="${rating[index]}">
             <img class="card-img-top" src="${images[0]}" alt="Card image cap">
             <div class="card-body">
             <p class="card-text">${item}</p>
@@ -215,19 +216,19 @@ let $ = require('jquery');
 
 function getAccessCodeData(){
  return $.ajax({
-     url: 'http://feelingfriday-stage.azurewebsites.net/api/accesscode'
+     url: 'http://feelingfriday-admin.azurewebsites.net/api/accesscode'
     });
 }
 
 function getQuestionData(){
  return $.ajax({
-     url: 'http://feelingfriday-stage.azurewebsites.net/api/survey'
+     url: 'http://feelingfriday-admin.azurewebsites.net/api/survey'
     });
 }
 
 function putData(obj){
     return $.ajax({
-        url: `http://feelingfriday-stage.azurewebsites.net/api/survey`,
+        url: `http://feelingfriday-admin.azurewebsites.net/api/survey`,
         method: 'POST',
         data: obj,
         dataType: "json"
@@ -247,7 +248,7 @@ function successScreen(answerObj) {
   $('.container').html("");
   $('.container').append(`
     <form>
-      <img id="logo" src="./images/logo.png" alt="company logo" />
+      <img id="logo" src="./images/check.png" alt="success check" />
       <h1 id="login-inst">Success!!!</h1>
     </form>
     `);
@@ -262,8 +263,8 @@ function errorScreen() {
   $('.container').html("");
   $('.container').append(`
   <form>
-    <img id="logo" src="/images/logo.png" alt="company logo" />
-    <h1 id="login-inst">ERROR!!!</h1>
+    <img id="logo" src="./images/dislike.png" alt="company logo" />
+    <h1 id="login-inst">ERROR. Please Try Again.</h1>
    
     <button id="submit-btn" type="submit" class="btn btn-primary btn-lg">Try Again</button>
   </form>
@@ -283,11 +284,11 @@ module.exports = {
 let $ = require('jquery'),
     survey = require('./surveyScreen');
 
-let gender = ["Male", "Female", "No Answer"],
+let gender = ["Male", "Female", "No answer"],
     images = ["./images/boy.png", "./images/girl.png"],
     pageTitle = "Gender";
 
-function show(answers){
+function show(answers) {
     $(".container").html("");
     $(".container").append(`<div id="button-set">
     <div class="title answers">${pageTitle}</div>
@@ -296,7 +297,7 @@ function show(answers){
     </div>`);
 
     let last = gender.pop();
-    gender.forEach((item, index)=>{
+    gender.forEach((item, index) => {
         $(".row").append(`
         <div class="card col-sm-4 thumb-cards" id="${item}">
             <img class="card-img-top gender" src="${images[index]}" alt="Card image cap">
@@ -309,12 +310,12 @@ function show(answers){
 
     $("#button-set").append(`<button type="button" id=${last} value="${last}" class="last-btn-item">${last}</button>`);
 
-    $("#button-set .card").on('click', (e)=>{
+    $("#button-set .card").on('click', (e) => {
         answers.gender = e.currentTarget.id;
         survey.show(answers);
     });
 
-    $("#button-set button").on('click', (e)=>{
+    $("#button-set button").on('click', (e) => {
         answers.gender = e.currentTarget.value;
         survey.show(answers);
     });
@@ -334,13 +335,12 @@ var regex = /^([+-]?[1-9]\d*|0)$/;
 let tap = require('./tapScreen');
 
 function show() {
-        $('.container').html("");
-        $('.container').append(`
+    $('.container').html("");
+    $('.container').append(`
         <form>
         <img id="logo" src="./images/logo.png" alt="company logo" />
         <h1 id="login-inst">Enter access code to begin</h1>
         <div class="form-group">
-        <p>USE CODE: 123432</p>
             <input id="access-code" type="number" min="0" inputmode="numeric" pattern="[0-9]*" title="Non-negative integral number" placeholder="ACCESS CODE">
         </div>
         
@@ -348,28 +348,29 @@ function show() {
         </form>
         `);
 
-        db.getAccessCodeData()
-            .then((data) => {
-                $("#submit-btn").on('click', (e) => {
-                    e.preventDefault();
-                    let inputVal = $('#access-code').val();
-                    let yesVal = [];
-                    data.forEach((item) => {
-                        if (item == parseInt(inputVal)) {
-                            document.cookie = `accessCode?${item}`;
-                            answers.accessCode = item;
-                            yesVal.push(item);
-                        }
-                    });
-
-                    if (yesVal.length != 0) {
-                        tap.show(answers);
-                    } else {
-                        show();
-                        $(".form-group").append(`<div class="error-message">Please Try Again</div>`);
+    db.getAccessCodeData()
+        .then((data) => {
+            $("#submit-btn").on('click', (e) => {
+                e.preventDefault();
+                let inputVal = $('#access-code').val();
+                let yesVal = [];
+                data.forEach((item) => {
+                    if (item == parseInt(inputVal)) {
+                        document.cookie = `accessCode?${item}`;
+                        console.log("cookie", document.cookie);
+                        answers.accessCode = item;
+                        yesVal.push(item);
                     }
                 });
+
+                if (yesVal.length != 0) {
+                    tap.show(answers);
+                } else {
+                    show();
+                    $(".form-group").append(`<div class="error-message">Please Try Again</div>`);
+                }
             });
+        });
 }
 
 module.exports = {
@@ -388,7 +389,7 @@ let cookieArray = document.cookie.split(";");
 let last = cookieArray.pop();
 let lastInt = last.split("?").pop();
 
-if(last.length < 18){
+if(last.length < 17){
     loginScreen.show();
 }else {
     answers.accessCode = parseInt(lastInt);
@@ -441,8 +442,10 @@ function show(answerObj) {
     <form>
       <img id="logo" src="./images/logo.png" alt="company logo" />
       <div class="form-group">
-      <button id="submit-btn" type="submit" class="btn-lg btn btn-primary ">Tap To Begin</button>
+      <h2 id="feeling-sentance">Feeling Friday... we listen</h2>
+      <button id="submit-btn" type="submit" class="btn-lg btn btn-primary ">Tap to begin</button>
     </form>
+    <p id="disclaimer">Children’s Privacy Statement: Data and information collected through this survey is de-identified and will be used to enhance Boys & Girls Club programs.  We will not intentionally collect or redistribute any personal information from children under the age of 18. If you think that we have collected personal information from a child under the age of 18, please contact your Club administrator.</p>
     `);
         $("#submit-btn").on('click', (e) => {
             e.preventDefault();
