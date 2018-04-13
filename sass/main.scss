@@ -4,8 +4,8 @@
 @import 'card';
 @import 'genderPage';
 @import 'answers';
-
 @import "backgroundSwap";
+@import "tapScreen";
 
 $font1: "Roboto", san-serif;
 
@@ -58,7 +58,7 @@ form {
 #logo {
     align-self: center;
     justify-self: center;
-    margin-bottom: 50px;
+    margin-bottom: 20px;
     margin-top: -20px;
     width: 300px;
 }
@@ -71,9 +71,12 @@ form {
 }
 
 .form-group {
-    margin-bottom: 60px;
-    align-self: center;
-    justify-self: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;
+    justify-content: center;
+    align-content: center;
 }
 
 #submit-btn {
