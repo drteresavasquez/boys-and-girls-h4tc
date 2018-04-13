@@ -7,7 +7,7 @@ function show(answerObj) {
     $('.container').html("");
     $('.container').append(`
     <form>
-      <img id="logo" src="/images/logo.png" alt="company logo" />
+      <img id="logo" src="./images/logo.png" alt="company logo" />
       <div class="form-group">
       <button id="submit-btn" type="submit" class="btn-lg btn btn-primary ">Tap To Begin</button>
     </form>
