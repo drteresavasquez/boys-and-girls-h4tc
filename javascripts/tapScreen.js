@@ -12,8 +12,6 @@ function show(answerObj) {
       <button id="submit-btn" type="submit" class="btn btn-primary btn-lg">Tap To Begin</button>
     </form>
     `);
-
-    
         $("#submit-btn").on('click', (e) => {
             e.preventDefault();
             allAges.makeAgeButtons(answerObj);
