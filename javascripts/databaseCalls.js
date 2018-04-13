@@ -17,7 +17,7 @@ function putData(obj){
     return $.ajax({
         url: `http://feelingfriday-stage.azurewebsites.net/api/survey`,
         method: 'POST',
-        data: obj,
+        data: JSON.stringify(obj),
         // data: obj,
         dataType: "json"
     }).done((data)=>{

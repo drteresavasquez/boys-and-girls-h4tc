@@ -17,24 +17,24 @@ function successScreen() {
     `);
 }
 
-// function errorScreen() {
-//   console.log("ERROR");
-//   $('.container').html("");
-//   $('.container').append(`
-//   <form>
-//     <img id="logo" src="/images/logo.png" alt="company logo" />
-//     <h1 id="login-inst">ERROR!!!</h1>
+function errorScreen() {
+  console.log("ERROR");
+  $('.container').html("");
+  $('.container').append(`
+  <form>
+    <img id="logo" src="/images/logo.png" alt="company logo" />
+    <h1 id="login-inst">ERROR!!!</h1>
    
-//     <button id="submit-btn" type="submit" class="btn btn-primary btn-lg">Try Again</button>
-//   </form>
-//   `);
+    <button id="submit-btn" type="submit" class="btn btn-primary btn-lg">Try Again</button>
+  </form>
+  `);
 
-//   $('#submit-btn').on('click', ()=>{
-//       tap.show(answers);
-//   });
-// }
+  $('#submit-btn').on('click', ()=>{
+      location.reload();
+  });
+}
 
 module.exports = {
   successScreen,
-  // errorScreen
+  errorScreen
 };

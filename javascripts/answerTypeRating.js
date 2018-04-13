@@ -35,6 +35,7 @@ function show(answers, question){
                 screens.successScreen();
             }else{
                 console.log("NOPE");
+                screens.errorScreen();
             }
         });
     });
