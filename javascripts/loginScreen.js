@@ -12,7 +12,7 @@ function show() {
         $('.container').html("");
         $('.container').append(`
         <form>
-        <img id="logo" src="./../images/logo.png" alt="company logo" />
+        <img id="logo" src="./images/logo.png" alt="company logo" />
         <h1 id="login-inst">Enter access code to begin</h1>
         <div class="form-group">
         <p>USE CODE: 123432</p>
