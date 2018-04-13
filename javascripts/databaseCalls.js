@@ -18,6 +18,7 @@ function putData(obj){
         url: `http://feelingfriday-stage.azurewebsites.net/api/survey`,
         method: 'POST',
         data: obj,
+        // data: obj,
         dataType: "json"
     }).done((data)=>{
         console.log(data);
