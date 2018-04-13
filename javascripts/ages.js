@@ -10,12 +10,15 @@ console.log("ages.js here");
 
 function makeAgeButtons(answers) {
     $(".container").html("");
-    $(".container").append(`<div class="title">${pageTitle}</div>`);
-    $(".container").append(`<div id="button-set"></div>`);
-    let agesDiv;
+    var agesDiv = document.createElement("div");
+    $(".container").append(agesDiv);
+    agesDiv.classList.add("ages-div");
+    $(".ages-div").append(`<div class="title">${pageTitle}</div>`);
+    $(".ages-div").append(`<div id="button-set"></div>`);
+    // let agesDiv;
     allAges.forEach((item)=>{
-        $("#button-set").append(`<button id=${item.btnText} value="${item.btnText}" class="gender-btn btn btn-lg">${item.btnText}</button>
-        <p>${item.subHeading}<p>`);
+        $("#button-set").append(`<button id=${item.btnText} value="${item.btnText}" class="age-btn btn btn-lg">${item.btnText}</button>
+        <p class="sub-heading">${item.subHeading}<p>`);
     });
 
     $("#button-set button").on('click', (e)=>{

@@ -9,26 +9,23 @@ $font1: "Roboto", san-serif;
 
 .btn{
     border: 1px solid black !important;
-    width: 40%;
+    // width: 40%;
     margin-bottom: 10px;
 }
 
 .sub-item{
     color: black;
-    
 }
 
 .last-btn-item{
     background: black;
     color: white;
     border: none;
-    width: 40%;
+    // width: 40%;
     margin-bottom: 10px;
 }
 
 body {
-    margin: 0 0 0 0;
-    padding: 0 0 0 0;
     font-family: $font1;
     background: 
         linear-gradient(
@@ -40,20 +37,10 @@ body {
 }
 
 .container {
-    margin: 0 0 0 0 !important;
-    padding: 0 0 0 0 !important;
+    margin: auto;
+    display: flex;
+    justify-content: center;
 }
-
-// form {
-//     display: grid;
-//     margin-top: 100px;
-//     grid-template-columns: 1fr;
-//     grid-template-rows: 150px 50px 50px 50px;
-//     justify-items: center;
-//     align-items: center;
-//     width: 100vw;
-//     height: 100vh;
-// }
 
 
 form {
@@ -68,8 +55,9 @@ form {
 #logo {
     align-self: center;
     justify-self: center;
-    margin-bottom: 80px;
-    width: 350px;
+    margin-bottom: 50px;
+    margin-top: -20px;
+    width: 300px;
 }
 
 #login-inst {
@@ -80,20 +68,19 @@ form {
 }
 
 .form-group {
-    margin-bottom: 30px;
-    grid-row: 3;
-    grid-column: 1;
+    margin-bottom: 60px;
+    // grid-row: 3;
+    // grid-column: 1;
     align-self: center;
     justify-self: center;
 }
 
 #submit-btn {
-    grid-row: 4;
-    grid-column: 1;
     align-self: center;
     justify-self: center;
     color: black;
-    background-color: white;   
+    background-color: white;  
+    width: 250px; 
 }
 
 input {
@@ -106,15 +93,22 @@ input {
     flex-direction: column;
 }
 
+.sub-heading {
+    color: white;
+}
 
 .title{
     color: white;
     font-family: $font1;
     text-align: center;
     font-size: 3em;
-    padding: 20px;
+    padding: 10px;
 }
 
+
+.age-btn {
+    width: 350px;
+}
 
 .gender-btn {
     align-items: center;
