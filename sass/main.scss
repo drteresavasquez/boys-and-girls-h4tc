@@ -6,6 +6,7 @@
 @import 'answers';
 @import "backgroundSwap";
 @import "tapScreen";
+@import "smallLogo";
 
 $font1: "Open Sans", san-serif;
 
@@ -38,8 +39,8 @@ body {
             rgba(0, 131, 211, 0.8)
         ),
         url("./../images/background-01.jpg");
-    background-size: cover;
     color: #333;
+    height: 100vh;
 }
 
 .container {
@@ -123,7 +124,9 @@ input {
     width: 350px;
 }
 
-
+.card-text {
+    font-size: 2em;
+}
 // form {
 //     margin: 0 auto;
 

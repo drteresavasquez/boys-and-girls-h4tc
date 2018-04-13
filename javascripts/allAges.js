@@ -3,23 +3,23 @@
 let allAges = [
     {
         btnText: "PeeWee",
-        subHeading:"K and 1st Grade"
+        subHeading:"K and 1st grade"
     },
     {
         btnText: "Cadet",
-        subHeading:"2nd and 3rd Grade"
+        subHeading:"2nd and 3rd grade"
     },
     {
         btnText: "Bantam",
-        subHeading:"4th and 5th Grade"
+        subHeading:"4th and 5th grade"
     },
     {
         btnText: "Junior",
-        subHeading:"6th Grade to 12 Years Old"
+        subHeading:"6th grade to 12 years old"
     },
     {
         btnText: "Teen",
-        subHeading:"13 Years and Older"
+        subHeading:"13 years and older"
     }
 ];
 

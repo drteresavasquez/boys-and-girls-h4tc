@@ -25,6 +25,8 @@ function makeAgeButtons(answers) {
         answers.ageGroup = e.currentTarget.value;
         genderScreen.show(answers);
     });
+
+    // $(".container").append(`<img id="small-logo" src="/images/logo.png" alt="logo"`);
 }
 
 module.exports = { makeAgeButtons };
