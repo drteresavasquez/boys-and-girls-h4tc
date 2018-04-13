@@ -15,7 +15,6 @@ function show() {
         <img id="logo" src="./images/logo.png" alt="company logo" />
         <h1 id="login-inst">Enter access code to begin</h1>
         <div class="form-group">
-        <p>USE CODE: 123432</p>
             <input id="access-code" type="number" min="0" inputmode="numeric" pattern="[0-9]*" title="Non-negative integral number" placeholder="ACCESS CODE">
         </div>
         
