@@ -41,6 +41,7 @@ body {
     margin: auto;
     display: flex;
     justify-content: center;
+    flex-direction: column;
 }
 
 
@@ -49,8 +50,8 @@ form {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 100vw;
     height: 100vh;
+    margin: 0 auto;
 }
 
 #logo {
@@ -70,8 +71,6 @@ form {
 
 .form-group {
     margin-bottom: 60px;
-    // grid-row: 3;
-    // grid-column: 1;
     align-self: center;
     justify-self: center;
 }
