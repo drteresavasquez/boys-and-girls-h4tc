@@ -12,6 +12,7 @@
 
 .card-text{
     padding-top: 10px !important;
+    text-align: center;
 }
 
 .thumbs{
@@ -20,4 +21,11 @@
 
 .thumb-cards{
     margin: 20px;
+    align-content: center;
+}
+
+.gender{
+    height: 200px;
+    width: 150px;
+    align-self: center;
 }
