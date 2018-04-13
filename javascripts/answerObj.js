@@ -3,7 +3,8 @@
 let answerObj = {
     ageGroup: '',
     gender: '',
-    answer: ''
+    answer: '',
+    accessCode: null
 };
 
 module.exports = answerObj;
