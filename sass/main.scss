@@ -3,6 +3,7 @@
 @import 'errorMessage';
 @import 'title';
 @import 'card';
+@import 'scriptFont';
 
 
 $font1: "Roboto", san-serif;
@@ -34,8 +35,6 @@ body {
             rgba(0, 131, 211, 0.5)
         ),
         url("/images/background-01.jpg");
-    background-repeat: no-repeat;
-    background-color: rgba(0, 131, 211, 0.5);
     background-size: cover;
 }
 
@@ -97,3 +96,8 @@ input {
 .subheading{
     color: white;
 }
+
+// form {
+//     margin: 0 auto;
+
+// }
