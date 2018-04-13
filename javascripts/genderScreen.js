@@ -3,23 +3,33 @@ let $ = require('jquery'),
     survey = require('./surveyScreen');
 
 let gender = ["Male", "Female", "No Answer"],
+    images = ["./images/boy.png", "./images/girl.png"],
     pageTitle = "Gender";
 
 function show(answers){
     $(".container").html("");
     $(".container").append(`<div class="title">${pageTitle}</div>`);
-    $(".container").append(`<div id="button-set"></div>`);
+    $(".container").append(`<div id="button-set">
+        <div class="row">
+        </div>
+    </div>`);
+    
     let last = gender.pop();
-    gender.forEach((item)=>{
-        $("#button-set").append(`
-            <button type="button" value="${item}" id=${item} class="btn btn-lg">${item}</button><br>
+    gender.forEach((item, index)=>{
+        $(".row").append(`
+        <div class="card col-sm-3" id="${item}">
+            <img class="card-img-top" src="${images[index]}" alt="Card image cap">
+            <div class="card-body">
+            <p class="card-text">${item}</p>
+            </div>
+        </div>
         `);
     });
 
     $("#button-set").append(`<button type="button" id=${last} value="${last}" class="last-btn-item">${last}</button>`);
 
-    $("#button-set button").on('click', (e)=>{
-        answers.gender = e.currentTarget.value;
+    $("#button-set .card").on('click', (e)=>{
+        answers.gender = e.currentTarget.id;
         survey.show(answers);
     });
 

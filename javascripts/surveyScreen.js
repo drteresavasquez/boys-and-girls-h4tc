@@ -29,6 +29,11 @@ function show(answerObj){
                 console.log("3");
                 rate.show(answerObj, data.Question);
                 break;
+            case 4:
+                //DO SOMETHING
+                console.log("3");
+                rate.show(answerObj, data.Question);
+                break;
         }
     });
 }

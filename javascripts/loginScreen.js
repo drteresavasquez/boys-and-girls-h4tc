@@ -2,7 +2,7 @@
 let surveyScreen = require("./surveyScreen");
 let $ = require('jquery');
 let dummyCode = 12345;
-let allAges = require('./ages');
+let tap = require('./tapToBegin');
 let answers = require('./answerObj');
 let db = require('./databaseCalls');
 var regex = /^([+-]?[1-9]\d*|0)$/;
@@ -36,7 +36,7 @@ function show() {
                 });
 
                 if (yesVal.length != 0) {
-                    allAges.makeAgeButtons(answers);
+                    tap.show(answers);
                     return;
                 } else {
                     show();

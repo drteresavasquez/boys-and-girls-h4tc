@@ -8,8 +8,8 @@ function getAccessCodeData(){
 }
 
 function getQuestionData(){
- return $.ajax({
-     url: 'http://feelingfriday-stage.azurewebsites.net/api/survey'
+    return $.ajax({
+        url: 'http://feelingfriday-stage.azurewebsites.net/api/survey'
     });
 }
 
