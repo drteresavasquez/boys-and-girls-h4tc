@@ -14,7 +14,7 @@ function makeAgeButtons(answers) {
     $(".container").append(`<div id="button-set"></div>`);
     let agesDiv;
     allAges.forEach((item)=>{
-        $("#button-set").append(`<button id=${item.btnText} value="${item.btnText}" class="btn btn-lg">${item.btnText}</button>
+        $("#button-set").append(`<button id=${item.btnText} value="${item.btnText}" class="gender-btn btn btn-lg">${item.btnText}</button>
         <p>${item.subHeading}<p>`);
     });
 
