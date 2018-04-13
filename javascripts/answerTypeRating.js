@@ -3,7 +3,7 @@ let $ = require('jquery');
 let db = require('./databaseCalls');
 let screens = require('./finalScreens');
 
-let text = ["Not At All", "", "Kind Of", "", "Very Much"];
+let text = ["Not at all", "", "Kind of", "", "Very much"];
 let images = ["./images/star.png"];
 
 function show(answers, question){
