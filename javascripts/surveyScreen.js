@@ -15,19 +15,19 @@ function show(answerObj){
             case 1:
                 //DO SOMETHING
                 console.log("1");
-                yesNo.show(answerObj);
+                yesNo.show(answerObj, data.Question);
                 // color.show(answerObj);
                 // rate.show(answerObj);
                 break;
             case 2:
                 //DO SOMETHING
                 console.log("2");
-                happy.show(answerObj);
+                happy.show(answerObj, data.Question);
                 break;
             case 3:
                 //DO SOMETHING
                 console.log("3");
-                rate.show(answerObj);
+                rate.show(answerObj, data.Question);
                 break;
         }
     });

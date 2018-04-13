@@ -15,7 +15,7 @@ function makeAgeButtons(answers) {
     let agesDiv;
     allAges.forEach((item)=>{
         $("#button-set").append(`<button id=${item.btnText} value="${item.btnText}" class="btn btn-lg">${item.btnText}</button>
-        <p>${item.subHeading}<p>`);
+        <p class="subheading">${item.subHeading}<p>`);
     });
 
     $("#button-set button").on('click', (e)=>{

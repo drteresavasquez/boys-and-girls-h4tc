@@ -1,7 +1,9 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto');
-@import 'errorMessage';
-
 @import "backgroundSwap";
+@import 'errorMessage';
+@import 'title';
+@import 'card';
+
 
 $font1: "Roboto", san-serif;
 
@@ -53,7 +55,6 @@ form {
     height: 100vh;
 }
 
-
 #logo {
     grid-row: 1;
     grid-column: 1;
@@ -93,7 +94,6 @@ input {
     text-align: center;
 }
 
-// form {
-//     margin: 0 auto;
-
-// }
+.subheading{
+    color: white;
+}

@@ -3,7 +3,7 @@ let $ = require('jquery');
 
 function getAccessCodeData(){
  return $.ajax({
-     url: 'http://feelingfriday-stage.azurewebsites.net//api/accesscode'
+     url: 'http://feelingfriday-stage.azurewebsites.net/api/accesscode'
     });
 }
 
@@ -15,9 +15,9 @@ function getQuestionData(){
 
 function putData(obj){
     return $.ajax({
-        url: `http://feelingfriday-stage.azurewebsites.net/api/survey`,
+        url: 'http://feelingfriday-stage.azurewebsites.net/api/survey',
         method: 'POST',
-        data: JSON.stringify(obj),
+        data: obj,
         dataType: "json"
     }).done((data)=>{
         console.log(data);
