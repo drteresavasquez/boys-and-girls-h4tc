@@ -72,6 +72,7 @@ module.exports = answerObj;
 "use strict";
 let $ = require('jquery');
 let db = require('./databaseCalls');
+let screens = require('./finalScreens');
 
 
 let text = ["Happy", "Neutral", "Sad"];
@@ -79,8 +80,9 @@ let images = ["./images/happy.png", "./images/confused.png", "./images/unhappy.p
 
 function show(answers, question){
     $('.container').html("");
-    $(".container").append(`<div class="title">${question}</div>`);
+    // $(".container").append(`<div class="title answers">${question}</div>`);
     $(".container").append(`<div id="button-set">
+    <div class="title answers">${question}</div>
         <div class="row">
         </div>
     </div>`);
@@ -102,8 +104,10 @@ function show(answers, question){
         db.putData(answers).then((response)=>{
             if(response > 199 && response < 300){
                 console.log("YES!");
+                screens.successScreen(answers);
             }else{
                 console.log("NOPE");
+                screens.errorScreen();
             }
         });
     });
@@ -112,26 +116,27 @@ function show(answers, question){
 }
 
 module.exports = {show};
-},{"./databaseCalls":7,"jquery":14}],5:[function(require,module,exports){
+},{"./databaseCalls":7,"./finalScreens":8,"jquery":14}],5:[function(require,module,exports){
 "use strict";
 let $ = require('jquery');
 let db = require('./databaseCalls');
 let screens = require('./finalScreens');
 
-let text = [1, 2, 3, 4, 5];
+let text = ["Not At All", "", "Kind Of", "", "Very Much"];
 let images = ["./images/star.png"];
 
 function show(answers, question){
     $('.container').html("");
-    $(".container").append(`<div class="title">${question}</div>`);
+    // $(".container").append(`<div class="title">${question}</div>`);
     $(".container").append(`<div id="button-set">
+    <div class="title answers">${question}</div>
         <div class="row">
         </div>
     </div>`);
 
     text.forEach((item, index)=>{
         $(".row").append(`
-        <div class="card col-sm-3" id="${item}">
+        <div class="card col-sm-2" id="${item}">
             <img class="card-img-top" src="${images[0]}" alt="Card image cap">
             <div class="card-body">
             <p class="card-text">${item}</p>
@@ -161,6 +166,7 @@ module.exports = {show};
 },{"./databaseCalls":7,"./finalScreens":8,"jquery":14}],6:[function(require,module,exports){
 "use strict";
 let $ = require('jquery');
+let screens = require('./finalScreens');
 
 let text = ["Yes", "No"];
 let images = ["./images/like.png", "./images/dislike.png"];
@@ -168,16 +174,16 @@ let db = require('./databaseCalls');
 
 function show(answers, question){
     $('.container').html("");
-    $(".container").append(`<div class="title">${question}</div>`);
     $(".container").append(`<div id="button-set">
+    <div class="title answers">${question}</div>
         <div class="row">
         </div>
     </div>`);
 
     text.forEach((item, index)=>{
         $(".row").append(`
-        <div class="card col-sm-3" id="${item}">
-            <img class="card-img-top" src="${images[index]}" alt="Card image cap">
+        <div class="card col-sm-4 thumb-cards" id="${item}">
+            <img class="card-img-top thumbs" src="${images[index]}" alt="Card image cap">
             <div class="card-body">
             <p class="card-text">${item}</p>
             </div>
@@ -191,8 +197,10 @@ function show(answers, question){
         db.putData(answers).then((response)=>{
             if(response > 199 && response < 300){
                 console.log("YES!");
+                screens.successScreen(answers);
             }else{
                 console.log("NOPE");
+                screens.errorScreen();
             }
         });
     });
@@ -201,25 +209,25 @@ function show(answers, question){
 }
 
 module.exports = {show};
-},{"./databaseCalls":7,"jquery":14}],7:[function(require,module,exports){
+},{"./databaseCalls":7,"./finalScreens":8,"jquery":14}],7:[function(require,module,exports){
 "use strict";
 let $ = require('jquery');
 
 function getAccessCodeData(){
  return $.ajax({
-     url: 'http://feelingfriday-stage.azurewebsites.net/api/accesscode'
+     url: 'https://feelingfriday-stage.azurewebsites.net/api/accesscode'
     });
 }
 
 function getQuestionData(){
  return $.ajax({
-     url: 'http://feelingfriday-stage.azurewebsites.net/api/survey'
+     url: 'https://feelingfriday-stage.azurewebsites.net/api/survey'
     });
 }
 
 function putData(obj){
     return $.ajax({
-        url: `http://feelingfriday-stage.azurewebsites.net/api/survey`,
+        url: `https://feelingfriday-stage.azurewebsites.net/api/survey`,
         method: 'POST',
         data: obj,
         dataType: "json"
@@ -276,23 +284,35 @@ let $ = require('jquery'),
     survey = require('./surveyScreen');
 
 let gender = ["Male", "Female", "No Answer"],
+    images = ["./images/boy.png", "./images/girl.png"],
     pageTitle = "Gender";
 
 function show(answers){
     $(".container").html("");
-    var genderDiv = document.createElement("div");
-    $(".container").append(genderDiv);
-    genderDiv.classList.add("gender-div");
-    $(".gender-div").append(`<div class="title">${pageTitle}</div>`);
-    $(".gender-div").append(`<div id="button-set"></div>`);
+    $(".container").append(`<div id="button-set">
+    <div class="title answers">${pageTitle}</div>
+        <div class="row">
+        </div>
+    </div>`);
+
     let last = gender.pop();
-    gender.forEach((item)=>{
-        $("#button-set").append(`
-            <button type="button" value="${item}" id=${item} class="btn btn-lg">${item}</button><br>
+    gender.forEach((item, index)=>{
+        $(".row").append(`
+        <div class="card col-sm-4 thumb-cards" id="${item}">
+            <img class="card-img-top gender" src="${images[index]}" alt="Card image cap">
+            <div class="card-body">
+            <p class="card-text">${item}</p>
+            </div>
+        </div>
         `);
     });
 
     $("#button-set").append(`<button type="button" id=${last} value="${last}" class="last-btn-item">${last}</button>`);
+
+    $("#button-set .card").on('click', (e)=>{
+        answers.gender = e.currentTarget.id;
+        survey.show(answers);
+    });
 
     $("#button-set button").on('click', (e)=>{
         answers.gender = e.currentTarget.value;
