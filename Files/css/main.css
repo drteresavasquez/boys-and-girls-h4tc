@@ -1,0 +1,145 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto");
+@import url("https://fonts.googleapis.com/css?family=Reenie+Beanie");
+.error-message {
+  color: red; }
+
+#button-set {
+  width: 90%;
+  margin: auto;
+  align-content: center; }
+
+.card, .card-img-top, .card-body {
+  background: none !important;
+  border: none !important; }
+
+.card-text {
+  color: white !important; }
+
+.answers {
+  margin-top: 20%; }
+
+.card-body {
+  margin-top: 10px;
+  margin: auto !important;
+  padding: 0 !important;
+  text-align: center; }
+
+.card-text {
+  padding-top: 10px !important;
+  text-align: center; }
+
+.thumbs {
+  height: 217px; }
+
+.thumb-cards {
+  margin: 20px;
+  align-content: center; }
+
+.gender {
+  height: 200px;
+  width: 150px;
+  align-self: center; }
+
+.bk-1 {
+  background: linear-gradient(rgba(0, 131, 211, 0.5), rgba(0, 131, 211, 0.5)), url("/images/background-02.jpg"); }
+
+.bk-2 {
+  background: linear-gradient(rgba(0, 131, 211, 0.5), rgba(0, 131, 211, 0.5)), url("/images/background-03.jpg"); }
+
+.bk-3 {
+  background: linear-gradient(rgba(0, 131, 211, 0.5), rgba(0, 131, 211, 0.5)), url("/images/background-04.jpg"); }
+
+.bk-4 {
+  background: linear-gradient(rgba(0, 131, 211, 0.5), rgba(0, 131, 211, 0.5)), url("/images/background-05.jpg"); }
+
+.bk-5 {
+  background: linear-gradient(rgba(0, 131, 211, 0.7), rgba(0, 131, 211, 0.7)), url("/images/background-06.jpg"); }
+
+.btn {
+  border: 1px solid black !important;
+  margin-bottom: 10px; }
+
+.sub-item {
+  color: black; }
+
+.last-btn-item {
+  background: none;
+  color: white;
+  border: none;
+  font-size: 1.5em;
+  margin-bottom: 10px; }
+
+body {
+  font-family: "Roboto", san-serif;
+  background: linear-gradient(rgba(0, 131, 211, 0.5), rgba(0, 131, 211, 0.5)), url("/images/background-01.jpg");
+  background-size: cover; }
+
+.container {
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  flex-direction: column; }
+
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0 auto; }
+
+#logo {
+  align-self: center;
+  justify-self: center;
+  margin-bottom: 50px;
+  margin-top: -20px;
+  width: 300px; }
+
+#login-inst {
+  align-self: center;
+  justify-self: center;
+  color: white;
+  margin-bottom: 30px; }
+
+.form-group {
+  margin-bottom: 60px;
+  align-self: center;
+  justify-self: center; }
+
+#submit-btn {
+  align-self: center;
+  justify-self: center;
+  color: black;
+  background-color: white;
+  width: 250px; }
+
+input {
+  text-align: center; }
+
+#button-set {
+  display: flex;
+  align-items: center;
+  flex-direction: column; }
+
+.sub-heading {
+  color: white; }
+
+.title {
+  color: white;
+  font-family: "Roboto", san-serif;
+  text-align: center;
+  font-size: 3em;
+  padding: 10px;
+  width: 100%; }
+
+.row {
+  width: 100%;
+  justify-content: center; }
+
+.age-btn {
+  width: 350px; }
+
+.gender-btn {
+  align-items: center; }
+
+/*# sourceMappingURL=main.css.map */
