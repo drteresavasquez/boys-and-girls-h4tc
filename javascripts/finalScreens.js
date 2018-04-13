@@ -7,7 +7,7 @@ function successScreen(answerObj) {
   $('.container').html("");
   $('.container').append(`
     <form>
-      <img id="logo" src="./images/logo.png" alt="company logo" />
+      <img id="logo" src="./images/check.png" alt="success check" />
       <h1 id="login-inst">Success!!!</h1>
     </form>
     `);
@@ -22,8 +22,8 @@ function errorScreen() {
   $('.container').html("");
   $('.container').append(`
   <form>
-    <img id="logo" src="/images/logo.png" alt="company logo" />
-    <h1 id="login-inst">ERROR!!!</h1>
+    <img id="logo" src="./images/dislike.png" alt="company logo" />
+    <h1 id="login-inst">ERROR. Please Try Again.</h1>
    
     <button id="submit-btn" type="submit" class="btn btn-primary btn-lg">Try Again</button>
   </form>

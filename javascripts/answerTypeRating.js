@@ -4,6 +4,7 @@ let db = require('./databaseCalls');
 let screens = require('./finalScreens');
 
 let text = ["Not At All", "", "Kind Of", "", "Very Much"];
+let rating = [1,2,3,4,5];
 let images = ["./images/star.png"];
 
 function show(answers, question){
@@ -17,7 +18,7 @@ function show(answers, question){
 
     text.forEach((item, index)=>{
         $(".row").append(`
-        <div class="card col-sm-2" id="${item}">
+        <div class="card col-sm-2" id="${rating[index]}">
             <img class="card-img-top" src="${images[0]}" alt="Card image cap">
             <div class="card-body">
             <p class="card-text">${item}</p>
