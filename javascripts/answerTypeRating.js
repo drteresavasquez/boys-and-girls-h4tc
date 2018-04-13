@@ -3,7 +3,6 @@ let $ = require('jquery');
 let db = require('./databaseCalls');
 let screens = require('./finalScreens');
 
-
 let text = [1, 2, 3, 4, 5];
 let images = ["./images/star.png"];
 
@@ -32,9 +31,10 @@ function show(answers, question){
         db.putData(answers).then((response)=>{
             if(response > 199 && response < 300){
                 console.log("YES!");
-                screens.successScreen();
+                screens.successScreen(answers);
             }else{
                 console.log("NOPE");
+                screens.errorScreen();
             }
         });
     });
