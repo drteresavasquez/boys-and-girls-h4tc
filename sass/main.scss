@@ -1,6 +1,8 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto');
 @import 'errorMessage';
 
+@import "backgroundSwap";
+
 $font1: "Roboto", san-serif;
 
 .btn{
@@ -30,58 +32,10 @@ body {
             rgba(0, 131, 211, 0.5)
         ),
         url("/images/background-01.jpg");
-    min-height: 100vh;
-    min-width: 100vh;
     background-repeat: no-repeat;
     background-color: rgba(0, 131, 211, 0.5);
     background-size: cover;
 }
-
-.bk-1 {
-    background: 
-        linear-gradient(
-            rgba(0, 131, 211, 0.5),
-            rgba(0, 131, 211, 0.5)
-        ),
-        url("/images/background-02.jpg");
-}
-
-.bk-2 {
-    background: 
-        linear-gradient(
-            rgba(0, 131, 211, 0.5),
-            rgba(0, 131, 211, 0.5)
-        ),
-        url("/images/background-03.jpg");
-}
-
-.bk-3 {
-    background: 
-        linear-gradient(
-            rgba(0, 131, 211, 0.5),
-            rgba(0, 131, 211, 0.5)
-        ),
-        url("/images/background-04.jpg");
-}
-
-.bk-4 {
-    background: 
-        linear-gradient(
-            rgba(0, 131, 211, 0.5),
-            rgba(0, 131, 211, 0.5)
-        ),
-        url("/images/background-05.jpg");
-}
-
-.bk-5 {
-    background: 
-        linear-gradient(
-            rgba(0, 131, 211, 0.7),
-            rgba(0, 131, 211, 0.7)
-        ),
-        url("/images/background-06.jpg");
-}
-
 
 .container {
     margin: 0 !important;
@@ -105,7 +59,8 @@ form {
     grid-column: 1;
     align-self: center;
     justify-self: center;
-    margin-bottom: 50px;
+    margin-bottom: 80px;
+    width: 350px;
 }
 
 #login-inst {
@@ -131,7 +86,11 @@ form {
     align-self: center;
     justify-self: center;
     color: black;
-    background-color: white;
+    background-color: white;   
+}
+
+input {
+    text-align: center;
 }
 
 // form {
