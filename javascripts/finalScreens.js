@@ -7,7 +7,7 @@ function successScreen(answerObj) {
   $('.container').html("");
   $('.container').append(`
     <form>
-      <img id="logo" src="/images/logo.png" alt="company logo" />
+      <img id="logo" src="./images/logo.png" alt="company logo" />
       <h1 id="login-inst">Success!!!</h1>
     </form>
     `);

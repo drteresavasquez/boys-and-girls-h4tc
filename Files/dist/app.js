@@ -247,7 +247,7 @@ function successScreen(answerObj) {
   $('.container').html("");
   $('.container').append(`
     <form>
-      <img id="logo" src="/images/logo.png" alt="company logo" />
+      <img id="logo" src="./images/logo.png" alt="company logo" />
       <h1 id="login-inst">Success!!!</h1>
     </form>
     `);
@@ -337,7 +337,7 @@ function show() {
         $('.container').html("");
         $('.container').append(`
         <form>
-        <img id="logo" src="/images/logo.png" alt="company logo" />
+        <img id="logo" src="./images/logo.png" alt="company logo" />
         <h1 id="login-inst">Enter access code to begin</h1>
         <div class="form-group">
         <p>USE CODE: 123432</p>
@@ -356,10 +356,8 @@ function show() {
                     let yesVal = [];
                     data.forEach((item) => {
                         if (item == parseInt(inputVal)) {
-                            // document.cookie = `accessCode?${item}`;
-                            // let newArray = document.cookie.split("?");
-                            // let code = newArray.pop();
-                            // answers.accessCode = parseInt(code);
+                            document.cookie = `accessCode?${item}`;
+                            answers.accessCode = item;
                             yesVal.push(item);
                         }
                     });
@@ -385,6 +383,7 @@ let tap = require('./tapScreen');
 let answers = require('./answerObj');
 let $ = require('jquery');
 
+console.log(document.cookie);
 let cookieArray = document.cookie.split(";");
 let last = cookieArray.pop();
 let lastInt = last.split("?").pop();
@@ -440,7 +439,7 @@ function show(answerObj) {
     $('.container').html("");
     $('.container').append(`
     <form>
-      <img id="logo" src="/images/logo.png" alt="company logo" />
+      <img id="logo" src="./images/logo.png" alt="company logo" />
       <div class="form-group">
       <button id="submit-btn" type="submit" class="btn-lg btn btn-primary ">Tap To Begin</button>
     </form>
