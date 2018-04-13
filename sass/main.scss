@@ -1,3 +1,7 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+$font1: "Roboto", san-serif;
+
 .btn{
     border: 1px solid black !important;
     width: 40%;
@@ -18,7 +22,13 @@
 }
 
 body {
-    background-image: url("/images/background-01.jpg");
+    font-family: $font1;
+    background: 
+        linear-gradient(
+            rgba(0, 131, 211, 0.5),
+            rgba(0, 131, 211, 0.5)
+        ),
+        url("/images/background-01.jpg");
     min-height: 100vh;
     min-width: 100vh;
     background-repeat: no-repeat;
@@ -27,21 +37,103 @@ body {
 }
 
 .bk-1 {
-    background-image: url("/images/background-02.jpg");
+    background: 
+        linear-gradient(
+            rgba(0, 131, 211, 0.5),
+            rgba(0, 131, 211, 0.5)
+        ),
+        url("/images/background-02.jpg");
 }
 
 .bk-2 {
-    background-image: url("/images/background-03.jpg");
+    background: 
+        linear-gradient(
+            rgba(0, 131, 211, 0.5),
+            rgba(0, 131, 211, 0.5)
+        ),
+        url("/images/background-03.jpg");
 }
 
 .bk-3 {
-    background-image: url("/images/background-04.jpg");
+    background: 
+        linear-gradient(
+            rgba(0, 131, 211, 0.5),
+            rgba(0, 131, 211, 0.5)
+        ),
+        url("/images/background-04.jpg");
 }
 
 .bk-4 {
-    background-image: url("/images/background-05.jpg");
+    background: 
+        linear-gradient(
+            rgba(0, 131, 211, 0.5),
+            rgba(0, 131, 211, 0.5)
+        ),
+        url("/images/background-05.jpg");
 }
 
 .bk-5 {
-    background-image: url("/images/background-06.jpg");
+    background: 
+        linear-gradient(
+            rgba(0, 131, 211, 0.7),
+            rgba(0, 131, 211, 0.7)
+        ),
+        url("/images/background-06.jpg");
 }
+
+
+.container {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+form {
+    display: grid;
+    margin-top: 100px;
+    grid-template-columns: 1fr;
+    grid-template-rows: 150px 50px 50px 50px;
+    justify-items: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+}
+
+
+#logo {
+    grid-row: 1;
+    grid-column: 1;
+    align-self: center;
+    justify-self: center;
+    margin-bottom: 50px;
+}
+
+#login-inst {
+    grid-row: 2;
+    grid-column: 1;
+    align-self: center;
+    justify-self: center;
+    color: white;
+    margin-bottom: 30px;
+}
+
+.form-group {
+    margin-bottom: 30px;
+    grid-row: 3;
+    grid-column: 1;
+    align-self: center;
+    justify-self: center;
+}
+
+#submit-btn {
+    grid-row: 4;
+    grid-column: 1;
+    align-self: center;
+    justify-self: center;
+    color: black;
+    background-color: white;
+}
+
+// form {
+//     margin: 0 auto;
+
+// }

@@ -11,11 +11,13 @@ function show() {
     $('.container').html("");
     $('.container').append(`
     <form>
+      <img id="logo" src="/images/logo.png" alt="company logo" />
+      <h1 id="login-inst">Enter access code to begin</h1>
       <div class="form-group">
         <input id="access-code" type="number" min="0" inputmode="numeric" pattern="[0-9]*" title="Non-negative integral number" placeholder="ACCESS CODE">
       </div>
      
-      <button id="submit-btn" type="submit" class="btn btn-primary">Submit</button>
+      <button id="submit-btn" type="submit" class="btn btn-primary btn-lg">Submit</button>
     </form>
     `);
 
