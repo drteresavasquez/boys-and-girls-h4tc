@@ -7,8 +7,11 @@ let gender = ["Male", "Female", "No Answer"],
 
 function show(answers){
     $(".container").html("");
-    $(".container").append(`<div class="title">${pageTitle}</div>`);
-    $(".container").append(`<div id="button-set"></div>`);
+    var genderDiv = document.createElement("div");
+    $(".container").append(genderDiv);
+    genderDiv.classList.add("gender-div");
+    $(".gender-div").append(`<div class="title">${pageTitle}</div>`);
+    $(".gender-div").append(`<div id="button-set"></div>`);
     let last = gender.pop();
     gender.forEach((item)=>{
         $("#button-set").append(`

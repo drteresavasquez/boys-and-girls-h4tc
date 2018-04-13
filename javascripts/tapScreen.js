@@ -9,7 +9,7 @@ function show(answerObj) {
     <form>
       <img id="logo" src="/images/logo.png" alt="company logo" />
       <div class="form-group">
-      <button id="submit-btn" type="submit" class="btn btn-primary btn-lg">Tap To Begin</button>
+      <button id="submit-btn" type="submit" class="btn-lg btn btn-primary ">Tap To Begin</button>
     </form>
     `);
 
