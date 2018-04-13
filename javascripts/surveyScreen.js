@@ -11,24 +11,29 @@ function show(answerObj){
     db.getQuestionData().then((data)=>{
     $(".container").html("");
 
-        switch (data.AnswerType) {
-            case 1:
-                //DO SOMETHING
-                console.log("1");
-                yesNo.show(answerObj);
-                // color.show(answerObj);
-                // rate.show(answerObj);
-                break;
-            case 2:
-                //DO SOMETHING
-                console.log("2");
-                happy.show(answerObj);
-                break;
-            case 3:
-                //DO SOMETHING
-                console.log("3");
-                rate.show(answerObj);
-                break;
+    switch (data.AnswerType) {
+        case 1:
+            //DO SOMETHING
+            console.log("1");
+            yesNo.show(answerObj, data.Question);
+            // color.show(answerObj);
+            // rate.show(answerObj);
+            break;
+        case 2:
+            //DO SOMETHING
+            console.log("2");
+            happy.show(answerObj, data.Question);
+            break;
+        case 3:
+            //DO SOMETHING
+            console.log("3");
+            rate.show(answerObj, data.Question);
+            break;
+        case 4:
+            //DO SOMETHING
+            console.log("3");
+            rate.show(answerObj, data.Question);
+            break;
         }
     });
 }
