@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto');
 @import 'errorMessage';
+@import 'scriptFont';
 
 @import "backgroundSwap";
 
@@ -32,8 +33,6 @@ body {
             rgba(0, 131, 211, 0.5)
         ),
         url("/images/background-01.jpg");
-    background-repeat: no-repeat;
-    background-color: rgba(0, 131, 211, 0.5);
     background-size: cover;
 }
 
@@ -52,7 +51,6 @@ form {
     width: 100vw;
     height: 100vh;
 }
-
 
 #logo {
     grid-row: 1;
@@ -92,6 +90,7 @@ form {
 input {
     text-align: center;
 }
+
 
 // form {
 //     margin: 0 auto;
