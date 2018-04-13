@@ -15,6 +15,7 @@ $black: #333;
 .btn{
     border: 1px solid white !important;
     // width: 40%;
+    background: white;
     margin-bottom: 10px;
 }
 
@@ -37,8 +38,7 @@ body {
             rgba(116, 202, 255, 0.7),
             rgba(0, 131, 211, 0.8)
         ),
-        url("/images/background-01.jpg");
-    // background-size: cover;
+        url("./../images/background-01.jpg");
     color: #333;
     height: 100vh;
 }
