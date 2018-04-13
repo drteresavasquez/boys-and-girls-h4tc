@@ -6,6 +6,7 @@ let allAges = require('./ages');
 let answers = require('./answerObj');
 let db = require('./databaseCalls');
 var regex = /^([+-]?[1-9]\d*|0)$/;
+let tap = require('./tapScreen');
 
 function show() {
     $('.container').html("");
@@ -36,8 +37,7 @@ function show() {
                 });
 
                 if (yesVal.length != 0) {
-                    allAges.makeAgeButtons(answers);
-                    return;
+                    tap.show(answers);
                 } else {
                     show();
                     $(".form-group").append(`<div class="error-message">Please Try Again</div>`);
