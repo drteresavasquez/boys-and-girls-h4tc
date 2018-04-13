@@ -2,6 +2,7 @@
 @import 'errorMessage';
 @import 'scriptFont';
 @import 'card';
+@import 'genderPage';
 
 @import "backgroundSwap";
 
@@ -110,9 +111,7 @@ input {
     width: 350px;
 }
 
-.gender-btn {
-    align-items: center;
-}
+
 // form {
 //     margin: 0 auto;
 

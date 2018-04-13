@@ -15,11 +15,11 @@ function show(answers){
     let last = gender.pop();
     gender.forEach((item)=>{
         $("#button-set").append(`
-            <button type="button" value="${item}" id=${item} class="btn btn-lg">${item}</button><br>
+            <button type="button" value="${item}" id=${item} class="gender-btn btn btn-lg">${item}</button><br>
         `);
     });
 
-    $("#button-set").append(`<button type="button" id=${last} value="${last}" class="last-btn-item">${last}</button>`);
+    $("#button-set").append(`<button type="button" id=${last} value="${last}" class="no-gender-btn last-btn-item">${last}</button>`);
 
     $("#button-set button").on('click', (e)=>{
         answers.gender = e.currentTarget.value;
