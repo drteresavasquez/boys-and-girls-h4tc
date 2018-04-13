@@ -1,6 +1,7 @@
 "use strict";
 let $ = require('jquery');
 let db = require('./databaseCalls');
+let screens = require('./finalScreens');
 
 
 let text = ["Happy", "Neutral", "Sad"];
@@ -8,8 +9,9 @@ let images = ["./images/happy.png", "./images/confused.png", "./images/unhappy.p
 
 function show(answers, question){
     $('.container').html("");
-    $(".container").append(`<div class="title">${question}</div>`);
+    // $(".container").append(`<div class="title answers">${question}</div>`);
     $(".container").append(`<div id="button-set">
+    <div class="title answers">${question}</div>
         <div class="row">
         </div>
     </div>`);
@@ -31,8 +33,10 @@ function show(answers, question){
         db.putData(answers).then((response)=>{
             if(response > 199 && response < 300){
                 console.log("YES!");
+                screens.successScreen(answers);
             }else{
                 console.log("NOPE");
+                screens.errorScreen();
             }
         });
     });
