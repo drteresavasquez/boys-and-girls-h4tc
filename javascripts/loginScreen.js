@@ -9,10 +9,10 @@ var regex = /^([+-]?[1-9]\d*|0)$/;
 let tap = require('./tapScreen');
 
 function show() {
-        $('.container').html("");
-        $('.container').append(`
+    $('.container').html("");
+    $('.container').append(`
         <form>
-        <img id="logo" src="/images/logo.png" alt="company logo" />
+        <img id="logo" src="./images/logo.png" alt="company logo" />
         <h1 id="login-inst">Enter access code to begin</h1>
         <div class="form-group">
         <p>USE CODE: 123432</p>
@@ -23,30 +23,29 @@ function show() {
         </form>
         `);
 
-        db.getAccessCodeData()
-            .then((data) => {
-                $("#submit-btn").on('click', (e) => {
-                    e.preventDefault();
-                    let inputVal = $('#access-code').val();
-                    let yesVal = [];
-                    data.forEach((item) => {
-                        if (item == parseInt(inputVal)) {
-                            // document.cookie = `accessCode?${item}`;
-                            // let newArray = document.cookie.split("?");
-                            // let code = newArray.pop();
-                            // answers.accessCode = parseInt(code);
-                            yesVal.push(item);
-                        }
-                    });
-
-                    if (yesVal.length != 0) {
-                        tap.show(answers);
-                    } else {
-                        show();
-                        $(".form-group").append(`<div class="error-message">Please Try Again</div>`);
+    db.getAccessCodeData()
+        .then((data) => {
+            $("#submit-btn").on('click', (e) => {
+                e.preventDefault();
+                let inputVal = $('#access-code').val();
+                let yesVal = [];
+                data.forEach((item) => {
+                    if (item == parseInt(inputVal)) {
+                        document.cookie = `accessCode?${item}`;
+                        console.log("cookie", document.cookie);
+                        answers.accessCode = item;
+                        yesVal.push(item);
                     }
                 });
+
+                if (yesVal.length != 0) {
+                    tap.show(answers);
+                } else {
+                    show();
+                    $(".form-group").append(`<div class="error-message">Please Try Again</div>`);
+                }
             });
+        });
 }
 
 module.exports = {

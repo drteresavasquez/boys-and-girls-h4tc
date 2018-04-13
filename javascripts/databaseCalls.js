@@ -3,19 +3,19 @@ let $ = require('jquery');
 
 function getAccessCodeData(){
  return $.ajax({
-     url: 'http://feelingfriday-stage.azurewebsites.net/api/accesscode'
+     url: 'http://feelingfriday-admin.azurewebsites.net/api/accesscode'
     });
 }
 
 function getQuestionData(){
  return $.ajax({
-     url: 'http://feelingfriday-stage.azurewebsites.net/api/survey'
+     url: 'http://feelingfriday-admin.azurewebsites.net/api/survey'
     });
 }
 
 function putData(obj){
     return $.ajax({
-        url: `http://feelingfriday-stage.azurewebsites.net/api/survey`,
+        url: `http://feelingfriday-admin.azurewebsites.net/api/survey`,
         method: 'POST',
         data: obj,
         dataType: "json"
