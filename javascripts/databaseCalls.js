@@ -14,7 +14,14 @@ function getQuestionData(){
 }
 
 function putData(obj){
-    console.log(obj);
+    return $.ajax({
+        url: `http://feelingfriday-stage.azurewebsites.net/api/survey`,
+        method: 'POST',
+        data: JSON.stringify(obj),
+        dataType: "json"
+    }).done((data)=>{
+        console.log(data);
+    });
 }
 
 module.exports = {getAccessCodeData, getQuestionData, putData};
