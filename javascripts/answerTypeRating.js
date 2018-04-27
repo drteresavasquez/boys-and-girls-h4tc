@@ -3,7 +3,9 @@ let $ = require('jquery');
 let db = require('./databaseCalls');
 let screens = require('./finalScreens');
 
-let text = ["Not At All", "", "Kind Of", "", "Very Much"];
+let text = ["Not at all", "", "Kind of", "", "Very much"];
+let rating = [1,2,3,4,5];
+
 let images = ["./images/star.png"];
 
 function show(answers, question){
@@ -17,7 +19,7 @@ function show(answers, question){
 
     text.forEach((item, index)=>{
         $(".row").append(`
-        <div class="card col-sm-2" id="${item}">
+        <div class="card col-sm-2" id="${rating[index]}">
             <img class="card-img-top" src="${images[0]}" alt="Card image cap">
             <div class="card-body">
             <p class="card-text">${item}</p>
@@ -29,15 +31,15 @@ function show(answers, question){
     $("#button-set .card").on('click', (e)=>{
         answers.answer = e.currentTarget.id;
         console.log(answers);
-        db.putData(answers).then((response)=>{
-            if(response > 199 && response < 300){
-                console.log("YES!");
-                screens.successScreen(answers);
-            }else{
-                console.log("NOPE");
-                screens.errorScreen();
-            }
-        });
+        // db.putData(answers).then((response)=>{
+        //     if(response > 199 && response < 300){
+        //         console.log("YES!");
+        screens.successScreen(answers);
+        // }else{
+        //     console.log("NOPE");
+        //     screens.errorScreen();
+        // }
+    // });
     });
 
 

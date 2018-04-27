@@ -1,145 +1,46 @@
-@import url("https://fonts.googleapis.com/css?family=Roboto");
-@import url("https://fonts.googleapis.com/css?family=Reenie+Beanie");
-.error-message {
-  color: red; }
+/*
+Error: Invalid CSS after "...und-size: cover": expected "{", was ";"
+        on line 43 of ../sass/main.scss
 
-#button-set {
-  width: 90%;
-  margin: auto;
-  align-content: center; }
+38:             rgba(116, 202, 255, 0.7),
+39:             rgba(0, 131, 211, 0.8)
+40:         ),
+41:         url("./../images/background-01.jpg");
+42: <<<<<<< HEAD
+43:     background-size: cover;
+44: =======
+45:     color: #333;
+46:     height: 100vh;
+47: >>>>>>> master
+48: }
 
-.card, .card-img-top, .card-body {
-  background: none !important;
-  border: none !important; }
-
-.card-text {
-  color: white !important; }
-
-.answers {
-  margin-top: 20%; }
-
-.card-body {
-  margin-top: 10px;
-  margin: auto !important;
-  padding: 0 !important;
-  text-align: center; }
-
-.card-text {
-  padding-top: 10px !important;
-  text-align: center; }
-
-.thumbs {
-  height: 217px; }
-
-.thumb-cards {
-  margin: 20px;
-  align-content: center; }
-
-.gender {
-  height: 200px;
-  width: 150px;
-  align-self: center; }
-
-.bk-1 {
-  background: linear-gradient(rgba(0, 131, 211, 0.5), rgba(0, 131, 211, 0.5)), url("/images/background-02.jpg"); }
-
-.bk-2 {
-  background: linear-gradient(rgba(0, 131, 211, 0.5), rgba(0, 131, 211, 0.5)), url("/images/background-03.jpg"); }
-
-.bk-3 {
-  background: linear-gradient(rgba(0, 131, 211, 0.5), rgba(0, 131, 211, 0.5)), url("/images/background-04.jpg"); }
-
-.bk-4 {
-  background: linear-gradient(rgba(0, 131, 211, 0.5), rgba(0, 131, 211, 0.5)), url("/images/background-05.jpg"); }
-
-.bk-5 {
-  background: linear-gradient(rgba(0, 131, 211, 0.7), rgba(0, 131, 211, 0.7)), url("/images/background-06.jpg"); }
-
-.btn {
-  border: 1px solid black !important;
-  margin-bottom: 10px; }
-
-.sub-item {
-  color: black; }
-
-.last-btn-item {
-  background: none;
-  color: white;
-  border: none;
-  font-size: 1.5em;
-  margin-bottom: 10px; }
-
-body {
-  font-family: "Roboto", san-serif;
-  background: linear-gradient(rgba(0, 131, 211, 0.5), rgba(0, 131, 211, 0.5)), url("./../images/background-01.jpg");
-  background-size: cover; }
-
-.container {
-  margin: auto;
-  display: flex;
-  justify-content: center;
-  flex-direction: column; }
-
-form {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  margin: 0 auto; }
-
-#logo {
-  align-self: center;
-  justify-self: center;
-  margin-bottom: 50px;
-  margin-top: -20px;
-  width: 300px; }
-
-#login-inst {
-  align-self: center;
-  justify-self: center;
-  color: white;
-  margin-bottom: 30px; }
-
-.form-group {
-  margin-bottom: 60px;
-  align-self: center;
-  justify-self: center; }
-
-#submit-btn {
-  align-self: center;
-  justify-self: center;
-  color: black;
-  background-color: white;
-  width: 250px; }
-
-input {
-  text-align: center; }
-
-#button-set {
-  display: flex;
-  align-items: center;
-  flex-direction: column; }
-
-.sub-heading {
-  color: white; }
-
-.title {
-  color: white;
-  font-family: "Roboto", san-serif;
-  text-align: center;
-  font-size: 3em;
-  padding: 10px;
-  width: 100%; }
-
-.row {
-  width: 100%;
-  justify-content: center; }
-
-.age-btn {
-  width: 350px; }
-
-.gender-btn {
-  align-items: center; }
-
-/*# sourceMappingURL=main.css.map */
+Backtrace:
+../sass/main.scss:43
+/Users/capewearingmama/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/sass-3.5.5/lib/sass/scss/parser.rb:1278:in `expected'
+/Users/capewearingmama/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/sass-3.5.5/lib/sass/scss/parser.rb:1208:in `expected'
+/Users/capewearingmama/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/sass-3.5.5/lib/sass/scss/parser.rb:1203:in `tok!'
+/Users/capewearingmama/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/sass-3.5.5/lib/sass/scss/parser.rb:677:in `block'
+/Users/capewearingmama/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/sass-3.5.5/lib/sass/scss/parser.rb:747:in `declaration_or_ruleset'
+/Users/capewearingmama/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/sass-3.5.5/lib/sass/scss/parser.rb:697:in `block_child'
+/Users/capewearingmama/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/sass-3.5.5/lib/sass/scss/parser.rb:689:in `block_contents'
+/Users/capewearingmama/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/sass-3.5.5/lib/sass/scss/parser.rb:678:in `block'
+/Users/capewearingmama/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/sass-3.5.5/lib/sass/scss/parser.rb:670:in `ruleset'
+/Users/capewearingmama/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/sass-3.5.5/lib/sass/scss/parser.rb:696:in `block_child'
+/Users/capewearingmama/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/sass-3.5.5/lib/sass/scss/parser.rb:689:in `block_contents'
+/Users/capewearingmama/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/sass-3.5.5/lib/sass/scss/parser.rb:137:in `stylesheet'
+/Users/capewearingmama/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/sass-3.5.5/lib/sass/scss/parser.rb:41:in `parse'
+/Users/capewearingmama/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/sass-3.5.5/lib/sass/engine.rb:414:in `_to_tree'
+/Users/capewearingmama/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/sass-3.5.5/lib/sass/engine.rb:389:in `_render_with_sourcemap'
+/Users/capewearingmama/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/sass-3.5.5/lib/sass/engine.rb:307:in `render_with_sourcemap'
+/Users/capewearingmama/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/sass-3.5.5/lib/sass/exec/sass_scss.rb:391:in `run'
+/Users/capewearingmama/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/sass-3.5.5/lib/sass/exec/sass_scss.rb:63:in `process_result'
+/Users/capewearingmama/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/sass-3.5.5/lib/sass/exec/base.rb:52:in `parse'
+/Users/capewearingmama/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/sass-3.5.5/lib/sass/exec/base.rb:19:in `parse!'
+/Users/capewearingmama/.rbenv/versions/2.4.2/lib/ruby/gems/2.4.0/gems/sass-3.5.5/bin/sass:13:in `<top (required)>'
+/Users/capewearingmama/.rbenv/versions/2.4.2/bin/sass:23:in `load'
+/Users/capewearingmama/.rbenv/versions/2.4.2/bin/sass:23:in `<main>'
+*/
+body:before {
+  white-space: pre;
+  font-family: monospace;
+  content: "Error: Invalid CSS after \"...und-size: cover\": expected \"{\", was \";\"\A         on line 43 of ../sass/main.scss\A \A 38:             rgba(116, 202, 255, 0.7),\A 39:             rgba(0, 131, 211, 0.8)\A 40:         ),\A 41:         url(\"./../images/background-01.jpg\");\A 42: <<<<<<< HEAD\A 43:     background-size: cover;\A 44: =======\A 45:     color: #333;\A 46:     height: 100vh;\A 47: >>>>>>> master\A 48: }"; }

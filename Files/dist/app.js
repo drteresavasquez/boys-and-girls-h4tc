@@ -26,8 +26,6 @@ function makeAgeButtons(answers) {
         answers.ageGroup = e.currentTarget.value;
         genderScreen.show(answers);
     });
-
-    // $(".container").append(`<img id="small-logo" src="/images/logo.png" alt="logo"`);
 }
 
 module.exports = { makeAgeButtons };
@@ -38,23 +36,23 @@ module.exports = { makeAgeButtons };
 let allAges = [
     {
         btnText: "PeeWee",
-        subHeading:"K and 1st grade"
+        subHeading:"K and 1st Grade"
     },
     {
         btnText: "Cadet",
-        subHeading:"2nd and 3rd grade"
+        subHeading:"2nd and 3rd Grade"
     },
     {
         btnText: "Bantam",
-        subHeading:"4th and 5th grade"
+        subHeading:"4th and 5th Grade"
     },
     {
         btnText: "Junior",
-        subHeading:"6th grade to 12 years old"
+        subHeading:"6th Grade to 12 Years Old"
     },
     {
         btnText: "Teen",
-        subHeading:"13 years and older"
+        subHeading:"13 Years and Older"
     }
 ];
 
@@ -103,15 +101,15 @@ function show(answers, question){
     $("#button-set .card").on('click', (e)=>{
         answers.answer = e.currentTarget.id;
         console.log(answers);
-        // db.putData(answers).then((response)=>{
-        //     if(response > 199 && response < 300){
-        //         console.log("YES!");
+        db.putData(answers).then((response)=>{
+            if(response > 199 && response < 300){
+                console.log("YES!");
                 screens.successScreen(answers);
-            // }else{
-            //     console.log("NOPE");
-            //     screens.errorScreen();
-            // }
-        // });
+            }else{
+                console.log("NOPE");
+                screens.errorScreen();
+            }
+        });
     });
 
 
@@ -124,9 +122,8 @@ let $ = require('jquery');
 let db = require('./databaseCalls');
 let screens = require('./finalScreens');
 
-let text = ["Not at all", "", "Kind of", "", "Very much"];
+let text = ["Not At All", "", "Kind Of", "", "Very Much"];
 let rating = [1,2,3,4,5];
-
 let images = ["./images/star.png"];
 
 function show(answers, question){
@@ -152,15 +149,15 @@ function show(answers, question){
     $("#button-set .card").on('click', (e)=>{
         answers.answer = e.currentTarget.id;
         console.log(answers);
-        // db.putData(answers).then((response)=>{
-        //     if(response > 199 && response < 300){
-        //         console.log("YES!");
-        screens.successScreen(answers);
-        // }else{
-        //     console.log("NOPE");
-        //     screens.errorScreen();
-        // }
-    // });
+        db.putData(answers).then((response)=>{
+            if(response > 199 && response < 300){
+                console.log("YES!");
+                screens.successScreen(answers);
+            }else{
+                console.log("NOPE");
+                screens.errorScreen();
+            }
+        });
     });
 
 
@@ -198,15 +195,15 @@ function show(answers, question){
     $("#button-set .card").on('click', (e)=>{
         answers.answer = e.currentTarget.id;
         console.log(answers);
-        // db.putData(answers).then((response)=>{
-        //     if(response > 199 && response < 300){
-        //         console.log("YES!");
-        screens.successScreen(answers);
-        // }else{
-        //     console.log("NOPE");
-        //     screens.errorScreen();
-        // }
-    // });
+        db.putData(answers).then((response)=>{
+            if(response > 199 && response < 300){
+                console.log("YES!");
+                screens.successScreen(answers);
+            }else{
+                console.log("NOPE");
+                screens.errorScreen();
+            }
+        });
     });
 
 
@@ -215,37 +212,33 @@ function show(answers, question){
 module.exports = {show};
 },{"./databaseCalls":7,"./finalScreens":8,"jquery":14}],7:[function(require,module,exports){
 "use strict";
-// let $ = require('jquery');
+let $ = require('jquery');
 
-// // function getAccessCodeData(){
-// //  return $.ajax({
-// //      url: 'http://feelingfriday-admin.azurewebsites.net/api/accesscode'
-// //     });
-// // }
+function getAccessCodeData(){
+ return $.ajax({
+     url: 'http://feelingfriday-admin.azurewebsites.net/api/accesscode'
+    });
+}
 
-// // function getQuestionData(){
-// //  return $.ajax({
-// //      url: 'http://feelingfriday-admin.azurewebsites.net/api/survey'
-// //     });
-// // }
+function getQuestionData(){
+ return $.ajax({
+     url: 'http://feelingfriday-admin.azurewebsites.net/api/survey'
+    });
+}
 
-// // function putData(obj){
-// //     return $.ajax({
-// //         url: `http://feelingfriday-admin.azurewebsites.net/api/survey`,
-// //         method: 'POST',
-// //         data: obj,
-// //         dataType: "json"
-// //     }).done((data)=>{
-// //         console.log(data);
-// //     });
-// // }
+function putData(obj){
+    return $.ajax({
+        url: `http://feelingfriday-admin.azurewebsites.net/api/survey`,
+        method: 'POST',
+        data: obj,
+        dataType: "json"
+    }).done((data)=>{
+        console.log(data);
+    });
+}
 
-// module.exports = {
-//     // getAccessCodeData, 
-//     // getQuestionData, 
-//     // putData
-// };
-},{}],8:[function(require,module,exports){
+module.exports = {getAccessCodeData, getQuestionData, putData};
+},{"jquery":14}],8:[function(require,module,exports){
 "use strict";
 
 let $ = require('jquery');
@@ -256,7 +249,7 @@ function successScreen(answerObj) {
   $('.container').append(`
     <form>
       <img id="logo" src="./images/check.png" alt="success check" />
-      <h1 id="login-inst">Success</h1>
+      <h1 id="login-inst">Success!!!</h1>
     </form>
     `);
 
@@ -347,7 +340,6 @@ function show() {
         <form>
         <img id="logo" src="./images/logo.png" alt="company logo" />
         <h1 id="login-inst">Enter access code to begin</h1>
-        <p>Use Code: 12345</p>
         <div class="form-group">
             <input id="access-code" type="number" min="0" inputmode="numeric" pattern="[0-9]*" title="Non-negative integral number" placeholder="ACCESS CODE">
         </div>
@@ -356,17 +348,20 @@ function show() {
         </form>
         `);
 
- 
+    db.getAccessCodeData()
+        .then((data) => {
             $("#submit-btn").on('click', (e) => {
                 e.preventDefault();
                 let inputVal = $('#access-code').val();
                 let yesVal = [];
-                    if (dummyCode == parseInt(inputVal)) {
-                        document.cookie = `accessCode?${dummyCode}`;
+                data.forEach((item) => {
+                    if (item == parseInt(inputVal)) {
+                        document.cookie = `accessCode?${item}`;
                         console.log("cookie", document.cookie);
-                        answers.accessCode = dummyCode;
-                        yesVal.push(dummyCode);
+                        answers.accessCode = item;
+                        yesVal.push(item);
                     }
+                });
 
                 if (yesVal.length != 0) {
                     tap.show(answers);
@@ -375,6 +370,7 @@ function show() {
                     $(".form-group").append(`<div class="error-message">Please Try Again</div>`);
                 }
             });
+        });
 }
 
 module.exports = {
@@ -389,7 +385,6 @@ let answers = require('./answerObj');
 let $ = require('jquery');
 
 console.log(document.cookie);
-console.log(answers.accessCode);
 let cookieArray = document.cookie.split(";");
 let last = cookieArray.pop();
 let lastInt = last.split("?").pop();
@@ -407,33 +402,31 @@ let $ = require('jquery'),
     db = require('./databaseCalls'),
     yesNo = require('./answerTypeYesNo'),
     happy = require('./answerTypeFeeling'),
-    rate = require('./answerTypeRating'),
-    questions = ["How do you feel?"];
+    rate = require('./answerTypeRating');
 
 function show(answerObj){
+    db.getQuestionData().then((data)=>{
     $(".container").html("");
 
-    let aType = [1,2,3,4];
-    let random = aType[Math.floor(Math.random() * aType.length)];
-
-    switch (random) {
+    switch (data.AnswerType) {
         case 1:
             console.log("1");
-            yesNo.show(answerObj, questions[0]);
+            yesNo.show(answerObj, data.Question);
             break;
         case 2:
             console.log("2");
-            happy.show(answerObj, questions[0]);
+            happy.show(answerObj, data.Question);
             break;
         case 3:
             console.log("3");
-            rate.show(answerObj, questions[0]);
+            rate.show(answerObj, data.Question);
             break;
         case 4:
             console.log("3");
-            rate.show(answerObj, questions[0]);
+            rate.show(answerObj, data.Question);
             break;
         }
+    });
 }
 
 module.exports = { show };
@@ -451,17 +444,12 @@ function show(answerObj) {
       <div class="form-group">
       <h2 id="feeling-sentance">Feeling Friday... we listen</h2>
       <button id="submit-btn" type="submit" class="btn-lg btn btn-primary ">Tap to begin</button>
-      <button id="exit-btn" class="btn-lg btn btn-primary ">Exit</button>
     </form>
-    <p id="disclaimer">Children's Privacy Statement: Data and information collected through this survey is de-identified and will be used to enhance Boys & Girls Club programs.  We will not intentionally collect or redistribute any personal information from children under the age of 18. If you think that we have collected personal information from a child under the age of 18, please contact your Club administrator.</p>
+    <p id="disclaimer">Children’s Privacy Statement: Data and information collected through this survey is de-identified and will be used to enhance Boys & Girls Club programs.  We will not intentionally collect or redistribute any personal information from children under the age of 18. If you think that we have collected personal information from a child under the age of 18, please contact your Club administrator.</p>
     `);
         $("#submit-btn").on('click', (e) => {
             e.preventDefault();
             allAges.makeAgeButtons(answerObj);
-        });
-
-        $("#exit-btn").on("click", (e)=>{
-            document.cookie = `accessCode?`;
         });
 }
 module.exports = {

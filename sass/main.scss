@@ -1,21 +1,26 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
 @import 'errorMessage';
 @import 'scriptFont';
 @import 'card';
+@import 'genderPage';
 @import 'answers';
-
 @import "backgroundSwap";
+@import "tapScreen";
+@import "smallLogo";
 
-$font1: "Roboto", san-serif;
+$font1: "Open Sans", san-serif;
+
+$black: #333;
 
 .btn{
-    border: 1px solid black !important;
+    border: 1px solid white !important;
     // width: 40%;
+    background: white;
     margin-bottom: 10px;
 }
 
 .sub-item{
-    color: black;
+    color: $black;
 }
 
 .last-btn-item{
@@ -29,12 +34,17 @@ $font1: "Roboto", san-serif;
 body {
     font-family: $font1;
     background: 
-        linear-gradient(
-            rgba(0, 131, 211, 0.5),
-            rgba(0, 131, 211, 0.5)
+        linear-gradient(to bottom right,
+            rgba(116, 202, 255, 0.7),
+            rgba(0, 131, 211, 0.8)
         ),
         url("./../images/background-01.jpg");
+<<<<<<< HEAD
     background-size: cover;
+=======
+    color: #333;
+    height: 100vh;
+>>>>>>> master
 }
 
 .container {
@@ -57,8 +67,7 @@ form {
 #logo {
     align-self: center;
     justify-self: center;
-    margin-bottom: 50px;
-    margin-top: -20px;
+    margin-bottom: 20px;
     width: 300px;
 }
 
@@ -70,15 +79,18 @@ form {
 }
 
 .form-group {
-    margin-bottom: 60px;
-    align-self: center;
-    justify-self: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;
+    justify-content: center;
+    align-content: center;
 }
 
-#submit-btn {
+#submit-btn, #exit-btn {
     align-self: center;
     justify-self: center;
-    color: black;
+    color: $black;
     background-color: white;  
     width: 250px; 
 }
@@ -115,8 +127,8 @@ input {
     width: 350px;
 }
 
-.gender-btn {
-    align-items: center;
+.card-text {
+    font-size: 2em;
 }
 // form {
 //     margin: 0 auto;
