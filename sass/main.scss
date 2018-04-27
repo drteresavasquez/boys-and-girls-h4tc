@@ -64,7 +64,6 @@ form {
     align-self: center;
     justify-self: center;
     margin-bottom: 20px;
-    margin-top: -20px;
     width: 300px;
 }
 
@@ -84,7 +83,7 @@ form {
     align-content: center;
 }
 
-#submit-btn {
+#submit-btn, #exit-btn {
     align-self: center;
     justify-self: center;
     color: $black;

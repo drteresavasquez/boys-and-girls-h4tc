@@ -30,15 +30,15 @@ function show(answers, question){
     $("#button-set .card").on('click', (e)=>{
         answers.answer = e.currentTarget.id;
         console.log(answers);
-        db.putData(answers).then((response)=>{
-            if(response > 199 && response < 300){
-                console.log("YES!");
+        // db.putData(answers).then((response)=>{
+        //     if(response > 199 && response < 300){
+        //         console.log("YES!");
                 screens.successScreen(answers);
-            }else{
-                console.log("NOPE");
-                screens.errorScreen();
-            }
-        });
+            // }else{
+            //     console.log("NOPE");
+            //     screens.errorScreen();
+            // }
+        // });
     });
 
 
