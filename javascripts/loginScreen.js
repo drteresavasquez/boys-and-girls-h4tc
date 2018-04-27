@@ -14,6 +14,7 @@ function show() {
         <form>
         <img id="logo" src="./images/logo.png" alt="company logo" />
         <h1 id="login-inst">Enter access code to begin</h1>
+        <p>Use Code: 12345</p>
         <div class="form-group">
             <input id="access-code" type="number" min="0" inputmode="numeric" pattern="[0-9]*" title="Non-negative integral number" placeholder="ACCESS CODE">
         </div>
@@ -22,20 +23,17 @@ function show() {
         </form>
         `);
 
-    db.getAccessCodeData()
-        .then((data) => {
+ 
             $("#submit-btn").on('click', (e) => {
                 e.preventDefault();
                 let inputVal = $('#access-code').val();
                 let yesVal = [];
-                data.forEach((item) => {
-                    if (item == parseInt(inputVal)) {
-                        document.cookie = `accessCode?${item}`;
+                    if (dummyCode == parseInt(inputVal)) {
+                        document.cookie = `accessCode?${dummyCode}`;
                         console.log("cookie", document.cookie);
-                        answers.accessCode = item;
-                        yesVal.push(item);
+                        answers.accessCode = dummyCode;
+                        yesVal.push(dummyCode);
                     }
-                });
 
                 if (yesVal.length != 0) {
                     tap.show(answers);
@@ -44,7 +42,6 @@ function show() {
                     $(".form-group").append(`<div class="error-message">Please Try Again</div>`);
                 }
             });
-        });
 }
 
 module.exports = {

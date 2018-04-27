@@ -6,6 +6,7 @@ let answers = require('./answerObj');
 let $ = require('jquery');
 
 console.log(document.cookie);
+console.log(answers.accessCode);
 let cookieArray = document.cookie.split(";");
 let last = cookieArray.pop();
 let lastInt = last.split("?").pop();
