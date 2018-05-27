@@ -11,6 +11,8 @@ console.log("ages.js here");
 
 function makeAgeButtons(answers) {
     $(".container").html("");
+    $("body").removeClass("bk-0");
+    $("body").addClass("bk-4");
     var agesDiv = document.createElement("div");
     $(".container").append(agesDiv);
     agesDiv.classList.add("ages-div");
@@ -82,6 +84,8 @@ let images = ["./images/happy.png", "./images/confused.png", "./images/unhappy.p
 
 function show(answers, question){
     $('.container').html("");
+    $("body").removeClass("bk-3");
+    $("body").addClass("bk-2");
     // $(".container").append(`<div class="title answers">${question}</div>`);
     $(".container").append(`<div id="button-set">
     <div class="title answers">${question}</div>
@@ -131,6 +135,8 @@ let images = ["./images/star.png"];
 
 function show(answers, question){
     $('.container').html("");
+    $("body").removeClass("bk-3");
+    $("body").addClass("bk-2");
     // $(".container").append(`<div class="title">${question}</div>`);
     $(".container").append(`<div id="button-set">
     <div class="title answers">${question}</div>
@@ -141,13 +147,17 @@ function show(answers, question){
     text.forEach((item, index)=>{
         $(".row").append(`
         <div class="card col-sm-2" id="${rating[index]}">
-            <img class="card-img-top" src="${images[0]}" alt="Card image cap">
+            <div class="star-div" id="${rating[index]}star">
+            </div>
+            
             <div class="card-body">
             <p class="card-text">${item}</p>
             </div>
         </div>
         `);
     });
+
+// <img class="card-img-top" src="${images[0]}" id="${rating[index]}star" alt="Card image cap">
 
     $("#button-set .card").on('click', (e)=>{
         answers.answer = e.currentTarget.id;
@@ -178,6 +188,8 @@ let db = require('./databaseCalls');
 
 function show(answers, question){
     $('.container').html("");
+    $("body").removeClass("bk-3");
+    $("body").addClass("bk-2");
     $(".container").append(`<div id="button-set">
     <div class="title answers">${question}</div>
         <div class="row">
@@ -268,6 +280,8 @@ function successScreen(answerObj) {
 function errorScreen() {
   console.log("ERROR");
   $('.container').html("");
+  $("body").removeClass("bk-2");
+  $("body").addClass("bk-1");
   $('.container').append(`
   <form>
     <img id="logo" src="./images/dislike.png" alt="company logo" />
@@ -297,6 +311,8 @@ let gender = ["Male", "Female", "No answer"],
 
 function show(answers) {
     $(".container").html("");
+    $("body").removeClass("bk-4");
+    $("body").addClass("bk-3");
     $(".container").append(`<div id="button-set">
     <div class="title answers">${pageTitle}</div>
         <div class="row">
@@ -343,16 +359,16 @@ let tap = require('./tapScreen');
 
 function show() {
     $('.container').html("");
+    $("body").addClass("bk-5");
     $('.container').append(`
         <form>
-        <img id="logo" src="./images/logo.png" alt="company logo" />
-        <h1 id="login-inst">Enter access code to begin</h1>
-        <p>Use Code: 12345</p>
-        <div class="form-group">
-            <input id="access-code" type="number" min="0" inputmode="numeric" pattern="[0-9]*" title="Non-negative integral number" placeholder="ACCESS CODE">
-        </div>
-        
-        <button id="submit-btn" type="submit" class="btn btn-primary btn-lg">Submit</button>
+            <img id="logo" src="./images/logo.png" alt="company logo" />
+            <h1 id="login-inst">Enter access code to begin</h1>
+            <p id="sample-code">USE THIS CODE FOR DEMO: 12345</p>
+            <div class="form-group">
+                <input id="access-code" type="number" min="0" inputmode="numeric" pattern="[0-9]*" title="Non-negative integral number" placeholder="ACCESS CODE">
+            </div>
+            <button id="submit-btn" type="submit" class="btn btn-primary btn-lg">Submit</button>
         </form>
         `);
 
@@ -408,10 +424,11 @@ let $ = require('jquery'),
     yesNo = require('./answerTypeYesNo'),
     happy = require('./answerTypeFeeling'),
     rate = require('./answerTypeRating'),
-    questions = ["How do you feel?"];
+    questions = ["Did you enjoy your experience this week?"];
 
 function show(answerObj){
     $(".container").html("");
+    $("body").addClass("bk-2");
 
     let aType = [1,2,3,4];
     let random = aType[Math.floor(Math.random() * aType.length)];
@@ -445,15 +462,18 @@ let allAges = require('./ages');
 
 function show(answerObj) {
     $('.container').html("");
+    $("body").removeClass("bk-5");
+    $("body").addClass("bk-0");
     $('.container').append(`
-    <form>
+    <form id="feeling-form">
       <img id="logo" src="./images/logo.png" alt="company logo" />
       <div class="form-group">
       <h2 id="feeling-sentance">Feeling Friday... we listen</h2>
       <button id="submit-btn" type="submit" class="btn-lg btn btn-primary ">Tap to begin</button>
       <button id="exit-btn" class="btn-lg btn btn-primary ">Exit</button>
+      <p id="disclaimer">Children's Privacy Statement: Data and information collected through this survey is de-identified and will be used to enhance Boys & Girls Club programs.  We will not intentionally collect or redistribute any personal information from children under the age of 18. If you think that we have collected personal information from a child under the age of 18, please contact your Club administrator.</p>
     </form>
-    <p id="disclaimer">Children's Privacy Statement: Data and information collected through this survey is de-identified and will be used to enhance Boys & Girls Club programs.  We will not intentionally collect or redistribute any personal information from children under the age of 18. If you think that we have collected personal information from a child under the age of 18, please contact your Club administrator.</p>
+    
     `);
         $("#submit-btn").on('click', (e) => {
             e.preventDefault();

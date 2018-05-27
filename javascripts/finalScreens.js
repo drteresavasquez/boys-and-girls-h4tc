@@ -20,6 +20,8 @@ function successScreen(answerObj) {
 function errorScreen() {
   console.log("ERROR");
   $('.container').html("");
+  $("body").removeClass("bk-2");
+  $("body").addClass("bk-1");
   $('.container').append(`
   <form>
     <img id="logo" src="./images/dislike.png" alt="company logo" />

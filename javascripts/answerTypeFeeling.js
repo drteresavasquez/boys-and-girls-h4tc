@@ -9,6 +9,8 @@ let images = ["./images/happy.png", "./images/confused.png", "./images/unhappy.p
 
 function show(answers, question){
     $('.container').html("");
+    $("body").removeClass("bk-3");
+    $("body").addClass("bk-2");
     // $(".container").append(`<div class="title answers">${question}</div>`);
     $(".container").append(`<div id="button-set">
     <div class="title answers">${question}</div>

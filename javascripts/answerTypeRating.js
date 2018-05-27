@@ -10,6 +10,8 @@ let images = ["./images/star.png"];
 
 function show(answers, question){
     $('.container').html("");
+    $("body").removeClass("bk-3");
+    $("body").addClass("bk-2");
     // $(".container").append(`<div class="title">${question}</div>`);
     $(".container").append(`<div id="button-set">
     <div class="title answers">${question}</div>
@@ -20,13 +22,17 @@ function show(answers, question){
     text.forEach((item, index)=>{
         $(".row").append(`
         <div class="card col-sm-2" id="${rating[index]}">
-            <img class="card-img-top" src="${images[0]}" alt="Card image cap">
+            <div class="star-div" id="${rating[index]}star">
+            </div>
+            
             <div class="card-body">
             <p class="card-text">${item}</p>
             </div>
         </div>
         `);
     });
+
+// <img class="card-img-top" src="${images[0]}" id="${rating[index]}star" alt="Card image cap">
 
     $("#button-set .card").on('click', (e)=>{
         answers.answer = e.currentTarget.id;

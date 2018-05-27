@@ -8,6 +8,8 @@ let gender = ["Male", "Female", "No answer"],
 
 function show(answers) {
     $(".container").html("");
+    $("body").removeClass("bk-4");
+    $("body").addClass("bk-3");
     $(".container").append(`<div id="button-set">
     <div class="title answers">${pageTitle}</div>
         <div class="row">

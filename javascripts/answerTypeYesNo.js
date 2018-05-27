@@ -8,6 +8,8 @@ let db = require('./databaseCalls');
 
 function show(answers, question){
     $('.container').html("");
+    $("body").removeClass("bk-3");
+    $("body").addClass("bk-2");
     $(".container").append(`<div id="button-set">
     <div class="title answers">${question}</div>
         <div class="row">
