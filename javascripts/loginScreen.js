@@ -5,7 +5,7 @@ let dummyCode = 12345;
 let allAges = require('./ages');
 let answers = require('./answerObj');
 let db = require('./databaseCalls');
-var regex = /^([+-]?[1-9]\d*|0)$/;
+// var regex = /^([+-]?[1-9]\d*|0)$/;
 let tap = require('./tapScreen');
 
 function show() {

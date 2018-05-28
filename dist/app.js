@@ -87,7 +87,7 @@ function show(answers, question){
     $("body").removeClass("bk-3");
     $("body").addClass("bk-2");
     // $(".container").append(`<div class="title answers">${question}</div>`);
-    $(".container").append(`<div id="button-set">
+    $(".container").append(`<div class="entries" id="button-set">
     <div class="title answers">${question}</div>
         <div class="row">
         </div>
@@ -137,19 +137,16 @@ function show(answers, question){
     $('.container').html("");
     $("body").removeClass("bk-3");
     $("body").addClass("bk-2");
-    // $(".container").append(`<div class="title">${question}</div>`);
-    $(".container").append(`<div id="button-set">
-    <div class="title answers">${question}</div>
-        <div class="row">
-        </div>
-    </div>`);
+    $(".container").append(
+        `<div class="entries" id="button-set">
+            <div class="title answers">${question}</div>
+            <div class="row"></div>
+        </div>`);
 
     text.forEach((item, index)=>{
-        $(".row").append(`
-        <div class="card col-sm-2" id="${rating[index]}">
-            <div class="star-div" id="${rating[index]}star">
-            </div>
-            
+        $(".row").append(
+            `<div class="card col-sm-2" id="${rating[index]}">
+            <img class="card-img-top" src="${images[0]}" alt="Card image cap">
             <div class="card-body">
             <p class="card-text">${item}</p>
             </div>
@@ -172,8 +169,6 @@ function show(answers, question){
         // }
     // });
     });
-
-
 }
 
 module.exports = {show};
@@ -190,7 +185,8 @@ function show(answers, question){
     $('.container').html("");
     $("body").removeClass("bk-3");
     $("body").addClass("bk-2");
-    $(".container").append(`<div id="button-set">
+    $(".container").append(
+        `<div class="entries" id="button-set">
     <div class="title answers">${question}</div>
         <div class="row">
         </div>
@@ -259,7 +255,7 @@ module.exports = {show};
 // };
 },{}],8:[function(require,module,exports){
 "use strict";
-
+//<img id="logo" src="./images/check.png" alt="success check" />
 let $ = require('jquery');
 let main = require('./main');
 function successScreen(answerObj) {
@@ -267,14 +263,15 @@ function successScreen(answerObj) {
   $('.container').html("");
   $('.container').append(`
     <form>
-      <img id="logo" src="./images/check.png" alt="success check" />
+      
+      <iframe width="500" height="500" src="https://lottiefiles.com/iframe/1822-tick-tick" frameborder="0" allowfullscreen></iframe>
       <h1 id="login-inst">Success</h1>
     </form>
     `);
 
     setTimeout(function(){ 
       location.reload();
-    }, 3000);
+    }, 2500);
 }
 
 function errorScreen() {
@@ -313,11 +310,11 @@ function show(answers) {
     $(".container").html("");
     $("body").removeClass("bk-4");
     $("body").addClass("bk-3");
-    $(".container").append(`<div id="button-set">
-    <div class="title answers">${pageTitle}</div>
-        <div class="row">
-        </div>
-    </div>`);
+    $(".container").append(
+        `<div class="entries" id="button-set">
+            <div class="title answers">${pageTitle}</div>
+            <div class="row"></div>
+        </div>`);
 
     let last = gender.pop();
     gender.forEach((item, index) => {
@@ -354,7 +351,7 @@ let dummyCode = 12345;
 let allAges = require('./ages');
 let answers = require('./answerObj');
 let db = require('./databaseCalls');
-var regex = /^([+-]?[1-9]\d*|0)$/;
+// var regex = /^([+-]?[1-9]\d*|0)$/;
 let tap = require('./tapScreen');
 
 function show() {
