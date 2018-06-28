@@ -5,21 +5,21 @@ let dummyCode = 12345;
 let allAges = require('./ages');
 let answers = require('./answerObj');
 let db = require('./databaseCalls');
-var regex = /^([+-]?[1-9]\d*|0)$/;
+// var regex = /^([+-]?[1-9]\d*|0)$/;
 let tap = require('./tapScreen');
 
 function show() {
     $('.container').html("");
+    $("body").addClass("bk-5");
     $('.container').append(`
         <form>
-        <img id="logo" src="./images/logo.png" alt="company logo" />
-        <h1 id="login-inst">Enter access code to begin</h1>
-        <p>Use Code: 12345</p>
-        <div class="form-group">
-            <input id="access-code" type="number" min="0" inputmode="numeric" pattern="[0-9]*" title="Non-negative integral number" placeholder="ACCESS CODE">
-        </div>
-        
-        <button id="submit-btn" type="submit" class="btn btn-primary btn-lg">Submit</button>
+            <img id="logo" src="./images/logo.png" alt="company logo" />
+            <h1 id="login-inst">Enter access code to begin</h1>
+            <p id="sample-code">USE THIS CODE FOR DEMO: 12345</p>
+            <div class="form-group">
+                <input id="access-code" type="number" min="0" inputmode="numeric" pattern="[0-9]*" title="Non-negative integral number" placeholder="ACCESS CODE">
+            </div>
+            <button id="submit-btn" type="submit" class="btn btn-primary btn-lg">Submit</button>
         </form>
         `);
 
