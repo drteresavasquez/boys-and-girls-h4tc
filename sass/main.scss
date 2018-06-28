@@ -1,12 +1,15 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans');
 @import 'errorMessage';
 @import 'scriptFont';
+@import "tapScreen";
+@import 'starPage';
 @import 'card';
 @import 'genderPage';
 @import 'answers';
 @import "backgroundSwap";
-@import "tapScreen";
+
 @import "smallLogo";
+@import "loginScreen";
 
 $font1: "Open Sans", san-serif;
 
@@ -38,7 +41,7 @@ body {
             rgba(116, 202, 255, 0.7),
             rgba(0, 131, 211, 0.8)
         ),
-        url("./../images/background-01.jpg");
+        url("./../images/background-06.jpg");
     background-size: cover;
     color: #333;
     height: 100vh;
@@ -48,11 +51,12 @@ body {
     margin: auto;
     display: flex;
     justify-content: center;
+    align-content: center;
+    align-items: center;
     flex-direction: column;
 }
 
-
-form {
+.entries {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -75,13 +79,13 @@ form {
     margin-bottom: 30px;
 }
 
-.form-group {
+form {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-items: center;
     justify-content: center;
-    align-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0 auto;
 }
 
 #submit-btn, #exit-btn {

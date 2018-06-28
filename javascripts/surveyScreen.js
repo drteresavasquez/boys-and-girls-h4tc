@@ -5,10 +5,11 @@ let $ = require('jquery'),
     yesNo = require('./answerTypeYesNo'),
     happy = require('./answerTypeFeeling'),
     rate = require('./answerTypeRating'),
-    questions = ["How do you feel?"];
+    questions = ["Did you enjoy your experience this week?"];
 
 function show(answerObj){
     $(".container").html("");
+    $("body").addClass("bk-2");
 
     let aType = [1,2,3,4];
     let random = aType[Math.floor(Math.random() * aType.length)];

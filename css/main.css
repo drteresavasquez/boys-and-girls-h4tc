@@ -3,6 +3,44 @@
 .error-message {
   color: red; }
 
+#feeling-sentance {
+  color: #ACE527;
+  font-size: 3em;
+  font-family: "Reenie Beanie", san-serif;
+  text-align: center;
+  margin-bottom: 50px; }
+
+#disclaimer {
+  color: white;
+  font-size: .7em;
+  font-style: italic;
+  margin-top: 20px; }
+
+#feeling-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0 auto; }
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-items: center;
+  justify-content: center;
+  align-content: center; }
+
+div#5star {
+  padding: 20px;
+  background: url("/images/star-filled.png") no-repeat center !important; }
+
+.star-div {
+  background: url("/images/star.png") no-repeat center;
+  height: 100px;
+  width: 100px; }
+
 #button-set {
   width: 90%;
   margin: auto;
@@ -15,35 +53,6 @@
 .card-text {
   color: white !important; }
 
-.gender-div {
-  display: grid;
-  grid-template-columns: auto;
-  grid-template-rows: auto auto auto;
-  align-items: center;
-  justify-items: center;
-  justify-content: center;
-  align-content: center; }
-
-.gender-title {
-  grid-row: 1;
-  grid-column: 1; }
-
-.gender-btn {
-  grid-row: 2;
-  grid-column: 1;
-  align-items: center; }
-
-.no-gender-btn {
-  grid-row: 3;
-  grid-column: 1; }
-
-.no-gender-btn {
-  grid-row: 3;
-  grid-column: 1; }
-
-.answers {
-  margin-top: 20%; }
-
 .card-body {
   margin-top: 10px;
   margin: auto !important;
@@ -54,9 +63,6 @@
   padding-top: 10px !important;
   text-align: center; }
 
-.thumbs {
-  height: 217px; }
-
 .thumb-cards {
   margin: 20px;
   align-content: center; }
@@ -66,33 +72,28 @@
   width: 150px;
   align-self: center; }
 
+.bk-0 {
+  background: linear-gradient(rgba(0, 131, 211, 0.7), rgba(0, 131, 211, 0.7)), url("/images/background-01.jpg"); }
+
 .bk-1 {
-  background: linear-gradient(rgba(0, 131, 211, 0.5), rgba(0, 131, 211, 0.5)), url("/images/background-02.jpg"); }
+  background: linear-gradient(rgba(0, 131, 211, 0.7), rgba(0, 131, 211, 0.7)), url("/images/background-02.jpg"); }
 
 .bk-2 {
-  background: linear-gradient(rgba(0, 131, 211, 0.5), rgba(0, 131, 211, 0.5)), url("/images/background-03.jpg"); }
+  background: linear-gradient(rgba(0, 131, 211, 0.7), rgba(0, 131, 211, 0.7)), url("/images/background-03.jpg"); }
 
 .bk-3 {
-  background: linear-gradient(rgba(0, 131, 211, 0.5), rgba(0, 131, 211, 0.5)), url("/images/background-04.jpg"); }
+  background: linear-gradient(rgba(0, 131, 211, 0.7), rgba(0, 131, 211, 0.7)), url("/images/background-04.jpg"); }
 
 .bk-4 {
-  background: linear-gradient(rgba(0, 131, 211, 0.5), rgba(0, 131, 211, 0.5)), url("/images/background-05.jpg"); }
+  background: linear-gradient(rgba(0, 131, 211, 0.7), rgba(0, 131, 211, 0.7)), url("/images/background-05.jpg"); }
 
 .bk-5 {
   background: linear-gradient(rgba(0, 131, 211, 0.7), rgba(0, 131, 211, 0.7)), url("/images/background-06.jpg"); }
 
-#feeling-sentance {
-  color: #ACE527;
-  font-size: 3em;
-  font-family: "Reenie Beanie", san-serif;
-  text-align: center;
-  margin-bottom: 50px; }
-
-#disclaimer {
-  color: white;
-  font-size: .7em;
-  font-style: italic;
-  margin-top: 200px; }
+#sample-code {
+  background-color: white;
+  padding: 3px;
+  border: 1px solid red; }
 
 .btn {
   border: 1px solid white !important;
@@ -111,7 +112,7 @@
 
 body {
   font-family: "Open Sans", san-serif;
-  background: linear-gradient(to bottom right, rgba(116, 202, 255, 0.7), rgba(0, 131, 211, 0.8)), url("./../images/background-01.jpg");
+  background: linear-gradient(to bottom right, rgba(116, 202, 255, 0.7), rgba(0, 131, 211, 0.8)), url("./../images/background-06.jpg");
   background-size: cover;
   color: #333;
   height: 100vh; }
@@ -120,9 +121,11 @@ body {
   margin: auto;
   display: flex;
   justify-content: center;
+  align-content: center;
+  align-items: center;
   flex-direction: column; }
 
-form {
+.entries {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -142,13 +145,13 @@ form {
   color: white;
   margin-bottom: 30px; }
 
-.form-group {
+form {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-items: center;
   justify-content: center;
-  align-content: center; }
+  align-items: center;
+  height: 100vh;
+  margin: 0 auto; }
 
 #submit-btn, #exit-btn {
   align-self: center;

@@ -10,16 +10,17 @@ let images = ["./images/star.png"];
 
 function show(answers, question){
     $('.container').html("");
-    // $(".container").append(`<div class="title">${question}</div>`);
-    $(".container").append(`<div id="button-set">
-    <div class="title answers">${question}</div>
-        <div class="row">
-        </div>
-    </div>`);
+    $("body").removeClass("bk-3");
+    $("body").addClass("bk-2");
+    $(".container").append(
+        `<div class="entries" id="button-set">
+            <div class="title answers">${question}</div>
+            <div class="row"></div>
+        </div>`);
 
     text.forEach((item, index)=>{
-        $(".row").append(`
-        <div class="card col-sm-2" id="${rating[index]}">
+        $(".row").append(
+            `<div class="card col-sm-2" id="${rating[index]}">
             <img class="card-img-top" src="${images[0]}" alt="Card image cap">
             <div class="card-body">
             <p class="card-text">${item}</p>
@@ -27,6 +28,8 @@ function show(answers, question){
         </div>
         `);
     });
+
+// <img class="card-img-top" src="${images[0]}" id="${rating[index]}star" alt="Card image cap">
 
     $("#button-set .card").on('click', (e)=>{
         answers.answer = e.currentTarget.id;
@@ -41,8 +44,6 @@ function show(answers, question){
         // }
     // });
     });
-
-
 }
 
 module.exports = {show};

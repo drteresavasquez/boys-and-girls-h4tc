@@ -8,11 +8,13 @@ let gender = ["Male", "Female", "No answer"],
 
 function show(answers) {
     $(".container").html("");
-    $(".container").append(`<div id="button-set">
-    <div class="title answers">${pageTitle}</div>
-        <div class="row">
-        </div>
-    </div>`);
+    $("body").removeClass("bk-4");
+    $("body").addClass("bk-3");
+    $(".container").append(
+        `<div class="entries" id="button-set">
+            <div class="title answers">${pageTitle}</div>
+            <div class="row"></div>
+        </div>`);
 
     let last = gender.pop();
     gender.forEach((item, index) => {

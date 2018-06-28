@@ -10,6 +10,8 @@ console.log("ages.js here");
 
 function makeAgeButtons(answers) {
     $(".container").html("");
+    $("body").removeClass("bk-0");
+    $("body").addClass("bk-4");
     var agesDiv = document.createElement("div");
     $(".container").append(agesDiv);
     agesDiv.classList.add("ages-div");
